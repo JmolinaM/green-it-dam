@@ -104,7 +104,9 @@ if __name__ == "__main__":
 
     print(f"  Resultado      : fibonacci({n}) = {datos['resultado']}")
     print(f"  Tiempo         : {datos['tiempo_s']:.4f} s")
-    print(f"  Emisiones CO₂  : {datos['emisiones_gCO2eq']:.6f} gCO₂eq  [{datos['fuente']}]")
+    co2 = datos['emisiones_gCO2eq']
+    co2_str = f"{co2:.3e}" if co2 < 0.001 else f"{co2:.6f}"
+    print(f"  Emisiones CO₂  : {co2_str} gCO₂eq  [{datos['fuente']}]")
     print()
     print("  → Anota estos valores como DATO BASE en la Ficha P1.")
     print("  → Ahora aplica las mejoras una a una y vuelve a medir.")

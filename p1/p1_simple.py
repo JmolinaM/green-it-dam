@@ -63,7 +63,7 @@ if __name__ == "__main__":
     print(f"\n  🌿 p1_simple.py — Suma del 1 al {N}")
     print(f"  Resultado      : {resultado}")
     print(f"  Tiempo         : {t1 - t0:.6f} s")
-    print(f"  Emisiones CO₂  : {emisiones_g:.8f} gCO₂eq  [{fuente}]")
+    print(f"  Emisiones CO₂  : {emisiones_g:.3e} gCO₂eq  [{fuente}]")
     print()
     print("  → Anota estos valores en la Ficha P1 (columna 'Simple').")
     print("  → Después ejecuta p1_complejo.py y calcula el ratio complejo/simple.")

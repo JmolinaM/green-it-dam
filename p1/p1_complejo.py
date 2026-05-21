@@ -104,7 +104,7 @@ if __name__ == "__main__":
     print(f"\n  🌿 p1_complejo.py — Ordenación + primos + cadenas")
     print(f"  Primos encontrados : {resultado['num_primos']}")
     print(f"  Tiempo             : {t1 - t0:.4f} s")
-    print(f"  Emisiones CO₂      : {emisiones_g:.6f} gCO₂eq  [{fuente}]")
+    print(f"  Emisiones CO₂      : {emisiones_g:.3e} gCO₂eq  [{fuente}]")
     print()
     print("  → Anota estos valores en la Ficha P1 (columna 'Complejo').")
     print("  → Calcula el ratio: CO₂(complejo) / CO₂(simple)")

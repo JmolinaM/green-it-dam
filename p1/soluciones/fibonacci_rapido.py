@@ -88,7 +88,10 @@ if __name__ == "__main__":
 
     print(f"  Resultado      : fibonacci({n}) = {datos['resultado']}")
     print(f"  Tiempo         : {datos['tiempo_s']:.6f} s")
-    print(f"  Emisiones CO₂  : {datos['emisiones_gCO2eq']:.8f} gCO₂eq  [{datos['fuente']}]")
+    if datos['emisiones_gCO2eq'] < 0.001:
+        print(f"  Emisiones CO₂  : {datos['emisiones_gCO2eq']:.3e} gCO₂eq  [{datos['fuente']}]")
+    else:
+        print(f"  Emisiones CO₂  : {datos['emisiones_gCO2eq']:.6f} gCO₂eq  [{datos['fuente']}]")
     print()
     print("  → Anota en la Ficha P1 (fila 'Mejora 3: versión iterativa').")
     print("  → Calcula la reducción total respecto al DATO BASE.")

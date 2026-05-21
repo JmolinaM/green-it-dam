@@ -66,6 +66,17 @@ def equivalencias(g: float) -> str:
     return "\n".join(lineas) if lineas else "  < 0,001 gCO₂eq (prácticamente cero)"
 
 
+def fmt_co2(g: float) -> str:
+    """Formatea gramos de CO₂eq con precisión adaptativa (nunca muestra 0)."""
+    if g == 0:
+        return "0.000000000 gCO₂eq"
+    if g >= 0.001:
+        return f"{g:.6f} gCO₂eq"
+    if g >= 1e-9:
+        return f"{g:.2e} gCO₂eq"
+    return f"{g:.3e} gCO₂eq"
+
+
 def barra_ascii(valor: float, maximo: float, ancho: int = 40) -> str:
     """Genera una barra de progreso ASCII proporcional al valor."""
     if maximo == 0:
@@ -149,8 +160,8 @@ if __name__ == "__main__":
         print(f"  │  Fuente de medición: {d_rec['fuente']}")
         print(f"  │")
         print(f"  │  CO₂ emitido:")
-        print(f"  │    Recursivo  [{barra_ascii(co2_rec, co2_rec, 35)}]  {co2_rec:.5f} gCO₂eq")
-        print(f"  │    Iterativo  [{barra_ascii(co2_ite, co2_rec, 35)}]  {co2_ite:.8f} gCO₂eq")
+        print(f"  │    Recursivo  [{barra_ascii(co2_rec, co2_rec, 35)}]  {fmt_co2(co2_rec)}")
+        print(f"  │    Iterativo  [{barra_ascii(co2_ite, co2_rec, 35)}]  {fmt_co2(co2_ite)}")
         print(f"  │    → Reducción: {reduccion_co2:.1f}%")
         print(f"  │")
         print(f"  │  Tiempo de ejecución:")
@@ -158,7 +169,7 @@ if __name__ == "__main__":
         print(f"  │    Iterativo  [{barra_ascii(t_ite, t_rec, 35)}]  {t_ite:.6f} s")
         print(f"  │    → Reducción: {reduccion_t:.1f}%")
         print(f"  │")
-        print(f"  │  ¿Qué significa {co2_rec:.5f} gCO₂eq?")
+        print(f"  │  ¿Qué significa {fmt_co2(co2_rec)}?")
         print(equivalencias(co2_rec))
         print(f"  └──────────────────────────────────────────────────────────")
 
