@@ -1,0 +1,287 @@
+\chapter{Marco teórico}
+\label{cap:capitulo2}
+
+
+Este capítulo revisa la literatura científica en torno a tres bloques: los fundamentos pedagógicos de una educación que no se limita a la concienciación sino que promueve la acción real (§2.1), el impacto ambiental del software y las TIC (§2.2), y el estado actual de la integración de Green IT en la educación informática (§2.3).
+
+
+
+
+\section{Fundamento Pedagógico: Educación para el Desarrollo Sostenible (EDS)}
+
+
+La implementación de un modelo didáctico orientado a la sostenibilidad en la formación profesionalizante se fundamenta en los marcos internacionales de la \textbf{Educación para el Desarrollo Sostenible (EDS)} y la reorientación curricular promovida por la UNESCO. A diferencia de los modelos que se limitan a transmitir información sobre problemas ambientales, la EDS propone transformar el proceso de enseñanza para que el alumnado no solo conozca los problemas, sino que sea capaz de actuar sobre ellos. Este enfoque busca activamente superar la mera concienciación para convertir la \textbf{capacidad de acción} en una competencia medible.
+
+
+El marco fue adoptado por la UNESCO en 2020 como programa EDS para 2030, vinculado al ODS 4 (educación inclusiva y de calidad), que exige que todos los educandos adquieran los conocimientos y competencias necesarios para promover el desarrollo sostenible \cite{unesco2020educacion}. El documento guía más reciente, \textit{Guía para hacer verdes los currículos: Enseñanza y aprendizaje para la acción climática} \cite{unesco2025guia}, establece los pilares concretos para esta transformación educativa en los sistemas de enseñanza formal.
+
+
+\subsection{Principios clave para una educación relevante y transformadora}
+
+
+El marco UNESCO establece que la EDS debe orientarse a la \textbf{acción transformadora}: los cambios concretos que cada alumno puede emprender a favor de la sostenibilidad, incluyendo su influencia en la sociedad. Como señala el propio texto: "La EDS en acción es la ciudadanía en acción" \cite{unesco2020educacion}. Los principios que guían esta educación deben garantizar su relevancia para el mundo actual y su capacidad transformadora \cite{unesco2025guia}:
+
+
+\begin{itemize}
+\item \textbf{Orientación a la acción}: Capacitar para la acción climática significativa. Se logra mediante el empoderamiento del alumnado, el uso de pedagogías activas y participativas —como el ABP—, y la vinculación directa con el mundo profesional. Este principio es la base del modelo didáctico de este TFM.
+\item \textbf{Promoción de la justicia}: La educación debe abordar los desafíos de la sostenibilidad desde una perspectiva de equidad, asegurando que las soluciones tecnológicas no generen nuevas desigualdades.
+\item \textbf{Contenido de calidad}: El currículo debe ser científicamente preciso y basarse en datos. En TIC, esto implica integrar la cuantificación rigurosa del impacto ambiental.
+\item \textbf{Integral y relevante}: La sostenibilidad debe tratarse como un sistema interconectado de dimensiones ambientales, sociales y económicas, y ser relevante para el contexto profesional concreto del alumnado.
+\end{itemize}
+
+
+El marco EDS para 2030 identifica también cinco ámbitos de acción prioritarios: el fomento de políticas educativas alineadas con los ODS, la transformación de los entornos de aprendizaje, el fortalecimiento de las capacidades docentes, el empoderamiento de las juventudes y la adopción de medidas en las comunidades \cite{unesco2020educacion}. Los cinco son relevantes para este TFM, aunque el segundo y el tercero —entornos de aprendizaje y capacitación docente— tienen la mayor incidencia directa sobre el diseño de las prácticas propuestas.
+
+
+La diferencia fundamental entre la educación ambiental (EA) clásica y la EDS transformacional no es de contenido sino de metodología y finalidad. La tabla siguiente sintetiza esta diferencia:
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{\textbf{Enseñanza tradicional de la EA}} & \textbf{\textbf{Aprendizaje transformacional (EDS)}} \\
+\hline
+Transmisión de conocimientos sobre el contenido ambiental & Fomento de la comprensión y el análisis crítico de las causas de la crisis climática \\
+\hline
+Enseñar actitudes y valores de forma prescriptiva & Fomentar la clarificación de valores y la reflexión crítica a partir de la experiencia vivida \\
+\hline
+Ver al alumnado como parte del problema del cambio climático & Ver al alumnado como facilitador del cambio y agente de transformación \\
+\hline
+Transmisión unidireccional de información & Diálogo, experimentación y negociación sobre las implicaciones de la información \\
+\hline
+El docente actúa como experto autoritario & El docente actúa como socio: informal e igualitario \\
+\hline
+Orientación al cambio de comportamiento personal & Atención prioritaria a los cambios estructurales e institucionales \\
+\hline
+\end{tabular}
+\caption{Principios clave para una educación relevante y transformadora}
+\label{tab:principios-clave-para-una-educacion-relevante-y-tr}
+\end{table}
+
+
+Una propuesta que se limite a mostrar datos sobre el impacto ambiental del software seguiría el patrón de la EA clásica. En cambio, poner al alumnado a medir el consumo de su propio código, comparar alternativas algorítmicas y reflexionar colectivamente sobre los resultados es una experiencia EDS transformacional, alineada con los principios de orientación a la acción que el marco UNESCO establece como condición para una educación verde efectiva.
+
+
+\subsection{La brecha KAB: de la concienciación a la acción}
+
+
+Una de las limitaciones más documentadas en la investigación sobre educación ambiental es la denominada \textbf{brecha KAB} (\textit{Knowledge-Attitude-Behavior gap}), definida por Kollmuss y Agyeman~\cite{kollmuss2002mind} como la distancia que separa el conocimiento de los problemas ambientales, la actitud positiva hacia la sostenibilidad y el comportamiento pro-ambiental efectivo. El hallazgo central de esta línea de investigación es paradójico pero consistente: tener más información sobre la crisis climática no se traduce automáticamente en un cambio de conducta. Las personas pueden saber que el software consume energía, estar de acuerdo en que eso es un problema y, sin embargo, no modificar sus prácticas de programación.
+
+
+La explicación psicosocial está en el \textbf{modelo tricomponente de las actitudes} \cite{rosenberg1960cognitive}. Según este modelo, las actitudes tienen tres componentes: el cognitivo (lo que sabemos sobre algo), el afectivo (lo que sentimos hacia ello) y el conductual (cómo actuamos). Para que una actitud se traduzca en conducta estable, los tres componentes deben estar alineados. Cuando la educación actúa solo sobre lo cognitivo —es decir, solo da información—, puede aumentar el conocimiento sin cambiar las emociones ni el comportamiento. Esa es exactamente la explicación del KAB gap.
+
+
+La relación entre actitud y conducta tampoco es automática. La \textbf{Teoría de la Conducta Planificada} \cite{ajzen1991theory} añade un elemento clave: el control percibido, es decir, si la persona cree que puede hacer algo al respecto. Un alumno que piensa que "reducir la huella del software es cosa de las grandes empresas, no de un programador junior" no actuará aunque conozca el problema y esté de acuerdo en que es grave.
+
+
+A esto se suman los sesgos cognitivos. Gifford (2011) los llama "dragones de la inacción" y describe varios que aparecen sistemáticamente en contextos ambientales: minimizar el propio impacto ("lo que haga yo no cambia nada") o atribuir la responsabilidad a otros ("la culpa es de los fabricantes de hardware"). Estos sesgos no desaparecen con más información; solo se corrigen cuando la persona ve la evidencia cuantificada de su propio comportamiento.
+
+
+Aquí entra el condicionamiento operante. Domjan~\cite{domjan2018principles} sistematiza el principio clásico de Skinner: una conducta que produce un resultado positivo inmediato tiende a repetirse. La clave es la \textbf{inmediatez}: el refuerzo debe llegar enseguida después de la acción para que la persona establezca la conexión. CodeCarbon —una librería de Python que mide en tiempo real los gramos de CO$_2$ emitidos al ejecutar un programa— reproduce exactamente este mecanismo. Cuando el alumno optimiza un algoritmo y ve al instante cómo caen las emisiones en el marcador, recibe un refuerzo positivo que consolida esa práctica. No es solo información: activa también la emoción (la satisfacción de un logro medible) y la conducta concreta (modificar el código real).
+
+
+Las prácticas de este TFM están diseñadas para actuar sobre los tres componentes a la vez: el cognitivo (entender la magnitud del impacto del software), el afectivo (sentir la responsabilidad al medir el propio código y la satisfacción al reducirlo) y el conductual (modificar el código hasta obtener una reducción medible). Actuar sobre los tres es la condición psicológica necesaria para cerrar el KAB gap en la formación informática.
+
+
+\subsection{Metodologías activas para la acción climática}
+
+
+La investigación empírica sobre EDS muestra con claridad qué condiciones pedagógicas funcionan. En un estudio con 2.413 estudiantes de 51 centros escolares suecos, Boeve-de Pauw et al.~\cite{boevedepauw2015effectiveness} demostraron que la EDS produce un impacto real en la conciencia de sostenibilidad del alumnado cuando el enfoque es a la vez holístico en los contenidos y activo en la metodología. El mismo estudio muestra que los programas que se limitan al componente cognitivo —dar información sobre el medioambiente— aumentan el conocimiento pero no cambian actitudes ni comportamientos \cite{boevedepauw2015effectiveness}.
+
+
+La UNESCO (2025, p. 30) señala que la pedagogía debe ser activa y reflexiva para desarrollar agentes de cambio. Las metodologías con mayor respaldo empírico en el contexto de la EDS y la enseñanza informática son las siguientes:
+
+
+\begin{itemize}
+\item \textbf{Aprendizaje Basado en Proyectos (ABP)}: Sitúa al alumnado ante problemas auténticos que requieren integrar conocimientos técnicos y competencias transversales. Considera al estudiante como un agente autónomo y constructor de conocimiento, logrando experiencias prácticas en contextos reales. En el contexto de la enseñanza de informática, su eficacia está ampliamente documentada \cite{kokotsaki2016project}. Las prácticas de este TFM adoptan una estructura de micro-proyectos de optimización de código con criterio energético: el problema es real, la herramienta es profesional (CodeCarbon) y el resultado es evaluable de forma objetiva.
+\end{itemize}
+
+
+\begin{itemize}
+\item \textbf{Aprendizaje Cooperativo (estructuras de Kagan)}: Las estructuras simples propuestas por Kagan —entre ellas \textit{Lápices al Centro}, \textit{Cabezas Numeradas} y \textit{Uno para Todos}— articulan la participación igualitaria de todos los miembros del grupo y la responsabilidad individual dentro del equipo \cite{kagan2009cooperative}. La evidencia empírica muestra que la interdependencia positiva y la cohesión grupal mejoran tanto el rendimiento como la motivación \cite{johnson1999making}. Las prácticas P2, P3 y P4 de este TFM se desarrollan en equipos cooperativos con roles definidos.
+\end{itemize}
+
+
+\begin{itemize}
+\item \textbf{Investigación-acción del alumnado}: El alumnado identifica un problema, diseña una intervención, mide los resultados y reflexiona sobre las implicaciones. Es especialmente adecuada para la enseñanza de la huella digital \cite{jensen1997action,junger2024potentials}. La progresión P1→P4 de este TFM —desde la medición pasiva de emisiones hasta el diseño de soluciones con métricas documentadas— reproduce el ciclo de investigación-acción a escala de laboratorio.
+\end{itemize}
+
+
+\begin{itemize}
+\item \textbf{Rutinas de Pensamiento (Harvard Project Zero)}: Desarrolladas por Ritchhart, Church y Morrison (2011), son herramientas metacognitivas que estructuran la reflexión del alumnado y hacen visible su proceso de razonamiento. Rutinas como \textit{Pienso-Me pregunto-Exploro} o \textit{Veo-Pienso-Me pregunto}, aplicadas a la Fase de Observación Reflexiva del ciclo de Kolb, permiten procesar los resultados numéricos de CodeCarbon con profundidad crítica.
+\end{itemize}
+
+
+\begin{itemize}
+\item \textbf{Pedagogía crítica y colaborativa}: Anima a evaluar críticamente las situaciones actuales para proponer soluciones de cambio estructural. El aprendizaje colaborativo garantiza que los participantes aborden y desarrollen soluciones en conjunto, superando el cambio de comportamiento individual para apuntar a cambios sistémicos \cite{unesco2025guia}.
+\end{itemize}
+
+
+La selección de estas metodologías responde a la evidencia empírica sobre su efectividad en contextos de EDS y al análisis psicosocial del KAB gap desarrollado en el apartado anterior.
+
+
+\subsection{Integración curricular y evaluación holística}
+
+
+La UNESCO (2025) favorece un enfoque integrado donde la sostenibilidad impregna todas las asignaturas. El objetivo es pasar de enseñar \textit{sobre} la sostenibilidad a enseñar \textit{para} la sostenibilidad, haciendo de la medición y mitigación del impacto ambiental de las TIC un \textbf{criterio de calidad técnica} en la formación de programadores.
+
+
+La evaluación de competencias de sostenibilidad tiene un reto específico en informática: los instrumentos habituales —exámenes de código, pruebas de funcionalidad— no capturan la dimensión ética y ambiental del trabajo profesional. La \textbf{evaluación auténtica}, definida por Wiggins~\cite{wiggins1990case} como aquella en la que el estudiante demuestra sus competencias en situaciones que replican el mundo real, es el marco más adecuado para este contexto. Herrington y Oliver~\cite{herrington2000instructional} añaden que una tarea es auténtica cuando está anclada en un problema real, exige complejidad real y produce algo con valor más allá de la nota.
+
+
+La evaluación debe ser holística \cite{unesco2025guia}, abarcando los dominios cognitivo, socioemocional y conductual. Las técnicas deben priorizar métodos "naturalistas", como la evaluación del trabajo basado en proyectos, antes que pruebas teóricas. En este TFM, los instrumentos de evaluación auténtica son la \textbf{rúbrica con criterio energético} (que incluye tanto la corrección del código como la reducción de emisiones medida con CodeCarbon), el \textbf{informe de optimización} (en el que el alumno documenta sus decisiones técnicas y su impacto cuantificado) y el \textbf{porfolio de evidencias} de la progresión P1→P4.
+
+
+
+
+\section{Comprensión del Impacto Ambiental de las Tecnologías de la Información}
+
+
+La transformación curricular y pedagógica sustentada en los principios de la EDS exige un cambio de enfoque fundamental: pasar de la mera concienciación a la \textbf{acción y la solución técnica}. En el ámbito de las TIC, esta urgencia se traduce en la necesidad de abordar la creciente —y a menudo subestimada— huella ecológica del sector. Por ello, la formación requiere un modelo didáctico centrado en la \textbf{medición} (para cuantificar el problema) y la \textbf{mitigación} (para aplicar la solución).
+
+
+\subsection{Huella de carbono del sector TIC: cuantificación del consumo energético}
+
+
+El sector TIC no es solo un gran consumidor de energía: es también un emisor significativo de gases de efecto invernadero con una trayectoria preocupante. La \textbf{Huella de Carbono de la tecnología} engloba las emisiones directas e indirectas asociadas a la producción, uso y disposición final de todos los componentes digitales. El consumo energético del sector se distribuye de manera compleja entre la infraestructura de red global, los centros de datos y los miles de millones de dispositivos de usuario final.
+
+
+Belkhir y Elmeligi~\cite{belkhir2018assessing} analizaron la huella de carbono global del sector TIC —dispositivos, centros de datos y redes, tanto en fabricación como en uso— y llegaron a una conclusión llamativa: si no se toman medidas, las emisiones del sector podrían pasar del 1-1,6\% de las emisiones mundiales en 2007 a superar el 14\% del nivel global de 2016 en el horizonte de 2040. Eso equivaldría a más de la mitad de lo que hoy emite todo el sector del transporte. Entre los mayores contribuyentes aparecen, de forma sorprendente, los teléfonos inteligentes: su huella total proyectada superaría a la de todos los ordenadores juntos \cite{belkhir2018assessing}.
+
+
+La Agencia Internacional de la Energía \cite{iea2024energy} actualiza este panorama con un foco específico en la inteligencia artificial, cuya proliferación está disparando la demanda energética de los centros de datos. La creciente adopción de tecnologías intensivas en cómputo, como el Machine Learning, requiere una cantidad ingente de cálculos, lo que se traduce directamente en un alto consumo de energía para alimentar las unidades de procesamiento (GPU, TPU). Verdecchia et al.~\cite{verdecchia2021green} proyectan que en 2030 los centros de datos solos absorberán el 10\% de la demanda eléctrica global, y que si se suman internet, telecomunicaciones y dispositivos embebidos, el sector TIC podría llegar a absorber un tercio de la demanda eléctrica mundial. Schoormann et al.~\cite{schoormann2025digital} recuerdan que las propias tecnologías digitales que podrían ayudar a resolver la crisis climática también contribuyen a ella, lo que exige una mirada crítica: la tecnología no resuelve automáticamente los problemas que ella misma genera.
+
+
+\subsection{Carbono operacional vs. carbono incorporado}
+
+
+Para entender el impacto ambiental de las TIC hay que distinguir dos tipos de emisiones:
+
+
+\begin{itemize}
+\item \textbf{Carbono operacional} (\textit{Operational Carbon}): Son las emisiones de GEI resultantes del consumo de energía durante la fase de operación de los sistemas TIC. Incluye la electricidad utilizada para el procesamiento de datos, la transmisión de información a través de redes y la refrigeración de centros de datos. Es la métrica tradicionalmente asociada al Green IT, enfocada en optimizar la eficiencia energética del hardware y del software en tiempo de ejecución.
+\end{itemize}
+
+
+\begin{itemize}
+\item \textbf{Carbono incorporado} (\textit{Embodied Carbon}): Corresponde a las emisiones generadas en las fases previas y posteriores a la operación: la extracción de materias primas, la fabricación, el transporte y la disposición final del hardware \cite{belkhir2018assessing}. Este carbono incluye la huella material, donde la dependencia de metales raros y los procesos de manufactura intensivos en energía son críticos.
+\end{itemize}
+
+
+La relevancia de esta distinción radica en que, a medida que el hardware se vuelve más eficiente y la electricidad se descarboniza, el carbono incorporado —vinculado al reemplazo y la fabricación— adquiere una proporción mayor del impacto total del ciclo de vida de un dispositivo. Las prácticas de Ingeniería de Software Verde deben, por tanto, enfocarse no solo en la eficiencia operacional, sino también en la \textbf{longevidad del hardware} para diluir su huella de carbono incorporado a lo largo de un periodo de uso más extenso \cite{verdecchia2021green}.
+
+
+Esta distinción es clave para el alumnado de DAM. Los futuros programadores no fabrican hardware, pero sí escriben el código que decide cuánta energía consume. Verdecchia et al.~\cite{verdecchia2021green} lo expresan con claridad: "Es cada único programador quien contribuye. Cada línea de código que desarrollamos hoy puede ejecutarse años después en millones de procesadores, consumiendo energía y contribuyendo al cambio climático global". Este argumento, publicado en \textit{IEEE Software}, es la justificación más directa para incluir la eficiencia energética como competencia en la formación técnica.
+
+
+\subsection{La nube como concentrador: impacto ambiental de los centros de datos}
+
+
+El Cloud Computing y su infraestructura de centros de datos actúan como \textbf{concentradores de la huella de carbono operacional}. Aunque la consolidación de recursos en centros de datos a gran escala (\textit{hiperescala}) puede ofrecer ciertas ganancias de eficiencia respecto a los servidores distribuidos —gracias a métricas como el PUE (\textit{Power Usage Effectiveness})—, la escala absoluta del consumo sigue siendo un desafío medioambiental de primer orden.
+
+
+El desafío de la medición en entornos cloud es complejo: los usuarios y desarrolladores rara vez tienen visibilidad directa sobre la infraestructura física que aloja sus servicios. Esto dificulta la cuantificación precisa de las emisiones atribuibles a una aplicación o servicio específico. Por ello, la sostenibilidad digital requiere de los proveedores de nube una mayor transparencia y el desarrollo de herramientas que permitan a los desarrolladores optimizar sus arquitecturas en función del consumo de energía real \cite{verdecchia2021green}. La ubicación geográfica de los centros de datos y la procedencia de su fuente de energía —renovable o fósil— son variables críticas que determinan la huella de carbono del servicio cloud consumido.
+
+
+\subsection{Green Software Engineering: principios y métricas}
+
+
+La \textbf{Ingeniería de Software Verde} (\textit{Green Software Engineering}, GSE) es el campo que estudia y sistematiza las prácticas de desarrollo de software orientadas a reducir su impacto energético y ambiental. Verdecchia et al.~\cite{verdecchia2021green} distinguen entre \textit{Green IT} —reducir el consumo de la infraestructura física— y \textit{Green Software Engineering}, que se centra en el software en sí mismo. En la definición de Junger et al.~\cite{junger2024potentials}, \textit{Green Coding} es "el acto de diseñar, desarrollar, mantener y reutilizar sistemas de software de manera que requieran la menor cantidad posible de energía y recursos".
+
+
+El marco conceptual de la GSE se articula en torno a la fórmula fundamental de la contabilidad de carbono para el consumo eléctrico —principal fuente del carbono operacional—:
+
+
+\textbf{Emisión de Carbono (C) = Energía Consumida (E) $\times$ Intensidad de Carbono (CI)}
+
+
+Un software sostenible debe impactar positivamente en ambos factores (E y CI), además de considerar las emisiones asociadas al hardware que lo soporta. La GSE aplica cuatro principios rectores para reducir sistémicamente la huella de carbono:
+
+
+\textbf{Principio I — Eficiencia Energética}: Reducir la cantidad de energía que usa el software para ejecutar una función concreta \cite{junger2024potentials}. Se logra optimizando los recursos de cómputo (CPU, memoria, disco) y minimizando la transferencia de datos por la red. La energía no solo se consume al procesar: cada byte transmitido implica un gasto energético en la infraestructura de red \cite{verdecchia2021green}.
+
+
+\textbf{Principio II — Conciencia de Carbono} (\textit{Carbon-Aware Computing}): Minimizar la huella de carbono, no solo la energía consumida. Se reconoce que la misma cantidad de energía tiene diferente impacto según dónde y cuándo se consume, ya que la intensidad de carbono (CI) de la red eléctrica varía por hora y región. Implica mover cargas de trabajo —temporal o geográficamente— a momentos o lugares donde la red eléctrica usa más energía renovable. Radovanovic et al.~\cite{radovanovic2021carbonaware} explican cómo retrasar cargas de trabajo flexibles minimiza la huella de carbono, reduciendo directamente el factor CI en la fórmula de emisiones.
+
+
+\textbf{Principio III — Hardware Eficiente y Ciclo de Vida}: El software debe maximizar la vida útil del hardware y usar los recursos de la forma más ligera posible, conectando directamente con el problema del carbono incorporado. Tannu y Nair~\cite{tannu2023dirty} destacan que la fabricación de un SSD tiene una huella de carbono hasta ocho veces mayor que una HDD de idéntica capacidad, debido a los procesos energéticamente intensivos de fabricación de semiconductores. La principal estrategia es extender la vida útil del dispositivo —amortizando así su alto coste de carbono inicial—, lo que se logra mediante optimizaciones de software como la nivelación de desgaste (\textit{Wear Leveling}) y la colocación inteligente de datos.
+
+
+\textbf{Principio IV — Medición, Herramientas y Transparencia}: La necesidad de cuantificar el impacto ambiental del software llevó a la Green Software Foundation (GSF) a definir el estándar \textbf{SCI} (\textit{Software Carbon Intensity}) \cite{greensoftwarefoundation2022sci}. Esta métrica es fundamental: establece que la sostenibilidad debe ser medible y que las decisiones de diseño y despliegue deben basarse en datos. Su fórmula es:
+
+
+\textbf{SCI = (O + M) / R}
+
+
+Donde O son las emisiones operacionales (E $\times$ CI), M son las emisiones incorporadas del hardware, y R es la unidad funcional de referencia que normaliza el resultado (por ejemplo, por cada mil transacciones, por usuario activo o por tarea completada). Un aspecto crucial es que la puntuación SCI solo puede reducirse mediante la eliminación física de emisiones —mayor eficiencia, uso de energía más limpia—, excluyendo explícitamente las compensaciones de carbono (\textit{offsets}).
+
+
+La tabla siguiente sintetiza los tres primeros principios con mayor relevancia para la formación en el ciclo de DAM:
+
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+\textbf{\textbf{Principio GSE}} & \textbf{\textbf{Qué significa}} & \textbf{\textbf{Cómo se trabaja en las prácticas}} \\
+\hline
+\textbf{Eficiencia energética} & Hacer el mismo trabajo computacional consumiendo menos energía, mediante la optimización de algoritmos, estructuras de datos y patrones de diseño & Medición comparativa de algoritmos equivalentes con CodeCarbon; rúbrica con criterio de reducción porcentual de emisiones \\
+\hline
+\textbf{Carbon-Aware Computing} & Adaptar la ejecución de tareas al momento del día o la región geográfica en que la red eléctrica tiene mayor proporción de energía renovable & Introducción conceptual en P4; análisis de datos de intensidad de carbono de la red eléctrica (API Carbon Intensity) \\
+\hline
+\textbf{Eficiencia de hardware} & Minimizar los recursos de hardware necesarios (CPU, memoria) para prolongar la vida útil del dispositivo y reducir el carbono incorporado & Perfilado de consumo de recursos; relación entre complejidad algorítmica $O(n)$ y consumo de hardware \\
+\hline
+\end{tabularx}
+\caption{Green Software Engineering: principios y métricas}
+\label{tab:green-software-engineering-principios-y-metricas}
+\end{table}
+
+
+
+
+\section{Green IT en la Educación: Estado del Arte Específico}
+
+
+\subsection{Experiencias previas de integración curricular}
+
+
+La revisión de Junger et al.~\cite{junger2024potentials} sobre los potenciales del \textit{Green Coding} en la educación es la referencia más completa disponible. Su conclusión es clara: los ingenieros de software carecen del conocimiento, la experiencia y las herramientas para programar de forma respetuosa con el medioambiente, y los currículos actuales —tanto universitarios como de FP— no incluyen la eficiencia energética como competencia central. Las experiencias documentadas se concentran casi exclusivamente en la universidad europea y norteamericana, donde algunos másteres han comenzado a incluir asignaturas de \textit{Sustainable Software Engineering} de forma optativa.
+
+
+La tabla siguiente resume las principales experiencias documentadas en la literatura:
+
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\textbf{\textbf{Contexto}} & \textbf{\textbf{Enfoque}} & \textbf{\textbf{Metodología}} & \textbf{\textbf{Nivel de acción}} \\
+\hline
+Universidad (Europa, EE. UU.) — varios autores, 2014-2022 & Introducción de GSE como asignatura optativa en grados de Ingeniería Informática & Clases magistrales con ejercicios de perfilado & Conocimiento y comprensión (Bloom L1-L2) \\
+\hline
+Máster PERCCOM (Internacional) & Formación especializada en Green IT para ingenieros TIC & ABP con proyectos de medición de eficiencia & Aplicación y análisis (Bloom L3-L4) \\
+\hline
+Proyecto GreenCoding.GI (Alemania, 2022-2023) & Integración de Green Coding en currículos universitarios y FP; revisión sistemática de literatura y piloto & Investigación-acción, revisión de literatura, talleres con empresas & Análisis y evaluación (Bloom L4-L5) \\
+\hline
+Educación secundaria y FP (Europa) & Escasa presencia documentada; contenidos de eficiencia energética dispersos en módulos de redes o sistemas & Metodología transmisiva predominante & Conocimiento (Bloom L1) \\
+\hline
+\end{tabularx}
+\caption{Experiencias previas de integración curricular}
+\label{tab:experiencias-previas-de-integracion-curricular}
+\end{table}
+
+
+En el contexto español, la tesis de Martínez Ventura (2022) sobre la integración de EDS en la enseñanza de Arquitectura ofrece un referente valioso: aborda el mismo problema —cómo integrar la sostenibilidad en una enseñanza técnica profesionalizante— pero en la universidad. Sus resultados son significativos: los 282 estudiantes encuestados en 19 escuelas de arquitectura valoraron la integración EDS como "moderada o muy moderada", y los métodos de enseñanza resultaron ser el principal predictor de los resultados de aprendizaje en sostenibilidad. Aunque el contexto es universitario y de Arquitectura, el diagnóstico es extrapolable a la FP de Informática: si en un grado de cinco años la integración EDS es modesta, en un ciclo de FP de dos años la situación es, a priori, más precaria. No existe ningún estudio equivalente publicado específicamente sobre la FP de Informática en España, lo que subraya la relevancia de este TFM.
+
+
+\subsection{Gap identificado: de la concienciación a la acción técnica medible en FP}
+
+
+La revisión de la literatura permite identificar un \textbf{doble gap} que justifica y orienta la propuesta de este TFM. El primero es un \textbf{gap de contenido}: en la Formación Profesional española de la familia de Informática y Comunicaciones, concretamente en el Ciclo Superior de Desarrollo de Aplicaciones Multiplataforma (DAM), no existen prácticas de laboratorio estructuradas que integren la medición y reducción de la huella de carbono del software como competencia explícita. Los módulos de programación vigentes priorizan la corrección funcional, el rendimiento computacional en términos de velocidad y la aplicación de patrones de diseño, sin incorporar el criterio de eficiencia energética como dimensión evaluable. Esta ausencia no es específica de España: Junger et al.~\cite{junger2024potentials} documentan la misma laguna en los currículos europeos e internacionales de Informática.
+
+
+El segundo es un \textbf{gap pedagógico}: las iniciativas existentes de integración de Green IT en la formación informática —cuando existen— utilizan predominantemente metodologías transmisivas (clases magistrales, presentaciones de datos) que, como señalan Boeve-de Pauw et al.~\cite{boevedepauw2015effectiveness}, son eficaces para generar conocimiento pero insuficientes para producir cambios de actitud y comportamiento pro-ambiental. La brecha KAB descrita en §2.1.2 no se cierra con información; requiere experiencias de aprendizaje que activen los tres componentes de la actitud (cognitivo, afectivo y conductual) y que proporcionen retroalimentación inmediata y cuantificada sobre la acción del propio estudiante.
+
+
+Este TFM responde simultáneamente a ambos gaps: al gap de contenido, mediante la integración explícita de los principios de la GSE y la herramienta CodeCarbon en cuatro prácticas de laboratorio del módulo de Programación de DAM 1º; y al gap pedagógico, mediante el diseño de esas prácticas bajo un enfoque de aprendizaje experiencial (ciclo de Kolb), aprendizaje cooperativo (estructuras de Kagan) y retroalimentación cuantitativa inmediata (CodeCarbon como refuerzo positivo operante), cuya fundamentación teórica ha sido desarrollada en los apartados precedentes.

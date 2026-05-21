@@ -1,0 +1,727 @@
+\chapter{Propuesta didáctica}
+\label{cap:capitulo4}
+\section{Visión general de la propuesta}
+
+
+La propuesta integra cinco prácticas de laboratorio en el módulo MP0485 (CFGS DAM, 1.º curso) siguiendo la progresión \textbf{Concienciar, Medir, Analizar, Optimizar y Actuar}. Cada práctica se vincula a un Resultado de Aprendizaje del Real Decreto 450/2010 e introduce la sostenibilidad como dimensión de calidad técnica, sin añadir contenido nuevo al currículo. Las cinco prácticas suman 14 sesiones de 50 min ($\approx$ 11,7 h, 4,6 \% del módulo) y siguen el ciclo experiencial de Kolb~\cite{kolb1984experiential}, con datos reales que el alumnado mide, interpreta y conecta a su impacto global \cite{kollmuss2002mind,unesco2020educacion}.
+
+
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+\hline
+\textbf{Cód.} & \textbf{Título} & \textbf{RA (RD 450/2010)} & \textbf{Metodología} & \textbf{Herramienta principal} & \textbf{Sesiones} \\
+\hline
+\textbf{P0} & \textit{¿Cuánto contamina tu código?} & Prev. a RA1 & Jigsaw + cálculo personal & Web (IEA, Electricity Maps, PNAV) & 2 \\
+\hline
+\textbf{P1} & \textit{¿Cuánto pesa tu algoritmo?} & RA3 & ABP individual & CodeCarbon · cProfile & 2 \\
+\hline
+\textbf{P2} & \textit{El objeto que viaja} & RA4 & ABP por parejas & \texttt{sys.getsizeof()} · \texttt{json} & 3 \\
+\hline
+\textbf{P3} & \textit{Datos que cuestan energía} & RA5 & ABP individual & CodeCarbon · tracemalloc & 3 \\
+\hline
+\textbf{P4} & \textit{La cola verde} & RA9 & ABP grupos de 3 & Electricity Maps API · heapq & 4 \\
+\hline
+\end{tabularx}
+\caption{Secuencia de prácticas Green IT para MP0485: Programación (CFGS DAM, 1.º curso)}
+\label{tab:secuencia-de-practicas-green-it-para-mp0485-progra}
+\end{table}
+
+
+
+
+
+
+\section{Práctica 0: Concienciar · \textit{¿Cuánto contamina tu código?}}
+
+
+\subsection{Ficha técnica}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Campo} & \textbf{Valor} \\
+\hline
+\textbf{Título} & \textit{¿Cuánto contamina tu código?} \\
+\hline
+\textbf{RA asociado} & Sin RA específico (práctica de encuadre, semanas 1-2) \\
+\hline
+\textbf{CE integrado} & El alumnado identifica el impacto ambiental del sector TIC y lo cuantifica mediante datos propios de consumo digital \\
+\hline
+\textbf{Metodología} & Jigsaw \cite{aronson2011cooperation} + cálculo personal de huella digital \\
+\hline
+\textbf{Duración} & 2 sesiones $\times$ 50 min \\
+\hline
+\textbf{Herramientas} & Sin instalación de software (IEA, Electricity Maps, Website Carbon Calculator, PNAV), papel y calculadora \\
+\hline
+\textbf{Entregable} & Ficha B de síntesis grupal + Ficha C individual con cálculo de huella \\
+\hline
+\end{tabular}
+\caption{Ficha técnica de la práctica P0}
+\label{tab:ficha-tecnica-p0}
+\end{table}
+
+
+\subsection{Objetivo}
+
+
+P0 construye el marco afectivo que da sentido a P1–P4. El alumnado investiga el impacto ambiental del sector TIC por dominios, enseña sus hallazgos a sus compañeros y calcula su propia huella de datos móviles. Al terminar, habrá cuantificado en primera persona el problema que las prácticas siguientes le pedirán resolver con código.
+
+
+\subsection{Sesión 1 (50 min): Quiz inicial, investigación experta y reunión de expertos}
+
+
+\textbf{(10 min) Fase 1: Experiencia Concreta} El alumnado responde individualmente un quiz de cinco preguntas sobre su percepción del impacto TIC (emisiones del sector, huella de la IA, hora más sostenible para navegar). El docente guarda los resultados para la corrección diferida al final de la sesión 2.
+
+
+\textbf{(5 min) Arranque del Jigsaw} El docente reparte la Tabla 4.2 de equivalencias de CO$_2$ y el material de cada dominio. Asigna los roles A–D y explica la estructura de las dos sesiones.
+
+
+\textbf{(20 min) Fase 2: Observación Reflexiva — investigación individual} Cada alumno trabaja su dominio e identifica los tres datos más impactantes. Los cuatro dominios cubren: sector TIC global (A), variabilidad horaria de la red española (B), huella de la IA (C) y huella de la web y apps cotidianas (D).
+
+
+\textbf{(15 min) Reunión de expertos} Los alumnos del mismo dominio (\textasciitilde{}4 personas) contrastan hallazgos y acuerdan los tres datos que presentarán al grupo base.
+
+
+\textbf{Tarea para casa (obligatoria):} Ficha C — calcular la huella anual de datos móviles con la fórmula: \texttt{GB/semana $\times$ 52 $\times$ 0,06 kWh/GB $\times$ 233 gCO$_2$eq/kWh}. El docente agrega los resultados antes de la sesión 2.
+
+
+
+
+\subsection{Sesión 2 (50 min): Enseñanza entre pares y corrección del quiz}
+
+
+\textbf{(15 min) Fase 3: Conceptualización Abstracta — enseñanza entre pares} Cada experto dispone de cuatro minutos para presentar su dominio al grupo base. Los demás completan la Ficha B. El docente marca el tiempo para garantizar que los cuatro dominios queden cubiertos.
+
+
+\textbf{(30 min) Fase 4: Experimentación Activa — puesta en común y corrección del quiz} El docente proyecta los datos de huella personal agregados y la extrapolación a 47 millones de usuarios: la distancia psicológica del impacto digital colapsa \cite{trope2010construal}. A continuación proyecta los resultados del quiz inicial frente a los datos reales. La pregunta: \textit{"¿Quién subestimó el impacto? ¿Por qué creíamos eso?"} activa el conflicto cognitivo \cite{piaget1977development} y el componente afectivo de la actitud \cite{rosenberg1960cognitive}.
+
+
+\textbf{(5 min) Cierre} El docente recoge las Fichas B y C. Pregunta final: \textit{"¿Con qué dato te quedas?"}
+
+
+\subsection{Tabla de equivalencias de CO$_2$}
+
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Cantidad CO$_2$eq} & \textbf{Equivale a…} \\
+\hline
+1 g CO$_2$eq & 2 búsquedas en Google · 4 mensajes de WhatsApp · 30 s de \textit{streaming} en HD \\
+\hline
+10 g CO$_2$eq & 1 min de videollamada en HD · 1 min de TikTok \\
+\hline
+100 g CO$_2$eq & 1 km en coche · 1 taza de café · 1 h de \textit{streaming} en HD \\
+\hline
+1 kg CO$_2$eq & 8 km en coche · cargar un smartphone \textasciitilde{}1.000 veces \\
+\hline
+10 kg CO$_2$eq & Madrid-Barcelona en AVE · vuelo doméstico de 1 h \\
+\hline
+100 kg CO$_2$eq & Madrid-Londres en avión · 800 km en coche \\
+\hline
+1 t CO$_2$eq & Madrid-Nueva York en avión (solo ida) · un español promedio durante 3 semanas \\
+\hline
+552 t CO$_2$eq & Entrenar GPT-3 \cite{strubell2019energy} \\
+\hline
+\end{tabular}
+\caption{Equivalencias de referencia para la interpretación de datos de emisiones}
+\label{tab:equivalencias-de-referencia-para-la-interpretacion}
+\end{table}
+
+
+\textit{Fuentes: Google~\cite{google2022environmental}; The Shift Project~\cite{shiftproject2019lean}; ADEME~\cite{ademe2022face}; IEA~\cite{iea2024energy}; Strubell et al.~\cite{strubell2019energy}.}
+
+
+
+
+
+
+\section{Práctica 1: Medir · \textit{¿Cuánto pesa tu algoritmo?} (RA3)}
+
+
+\subsection{Ficha técnica}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Campo} & \textbf{Valor} \\
+\hline
+\textbf{Título} & \textit{¿Cuánto pesa tu algoritmo?} \\
+\hline
+\textbf{RA asociado} & RA3: Escribe y depura código, analizando y utilizando las estructuras de control del flujo \\
+\hline
+\textbf{CE integrado} & Se ha medido y comparado el consumo energético de diferentes implementaciones de una misma función, seleccionando la de menor huella de carbono \\
+\hline
+\textbf{Metodología} & ABP individual \\
+\hline
+\textbf{Duración} & 2 sesiones $\times$ 50 min \\
+\hline
+\textbf{Herramientas} & CodeCarbon (\texttt{pip install codecarbon}), cProfile (stdlib), Python 3.10+, VS Code \\
+\hline
+\textbf{Entregable} & Ficha P1: tabla de mediciones (código original + 3 mejoras) + extrapolación a escala de producción + reflexión breve \\
+\hline
+\end{tabular}
+\caption{Ficha técnica de la práctica P1}
+\label{tab:ficha-tecnica-p1}
+\end{table}
+
+
+\subsection{Objetivo}
+
+
+El alumnado cuantifica la huella de carbono de distintas implementaciones algorítmicas con herramientas de medición profesionales, comprendiendo que la complejidad computacional no es solo una cuestión de rendimiento sino también de impacto ambiental. El escenario de partida: \textit{GreenCalc S.L.} procesa 10 millones de peticiones al día y pide optimizar su módulo central. Al terminar, el alumno habrá aplicado el Principio I de la GSE (eficiencia energética) con datos propios medidos en el aula.
+
+
+\subsubsection{Sesión 1 (50 min): \textit{¿Cómo puede un programa gastar CO$_2$?}}
+
+
+\textbf{Objetivo:} Construir el modelo mental de por qué el software tiene huella de carbono y verificarlo con datos reales.
+
+
+\textbf{(15 min) Debate inicial} El docente lanza dos preguntas sin responder él mismo:
+
+\begin{enumerate}
+\item \textit{"¿Cómo puede un programa gastar CO$_2$? Un archivo de texto no quema nada."}
+\item \textit{"¿Dónde está el consumo: en la CPU, la memoria, el disco, la red?"}
+\end{enumerate}
+
+
+Los alumnos defienden su posición. El docente registra las hipótesis en la pizarra sin confirmar ninguna. Los datos de medición de esta sesión darán la respuesta.
+
+
+\textbf{(5 min) Instalación de CodeCarbon} El docente proyecta el proceso: \texttt{pip install codecarbon}. El alumnado lo ejecuta. Los errores de entorno se resuelven en este momento.
+
+
+\textbf{(15 min) Medir un programa complejo} El repositorio incluye \texttt{p1\\_complejo.py}: ordena listas grandes, calcula primos y opera cadenas en bucle. El alumnado lo instrumenta con CodeCarbon, anota tiempo y emisiones en la Ficha P1.
+
+
+\textbf{(15 min) Medir un programa simple y comparar} El repositorio incluye \texttt{p1\\_simple.py}: suma los números del 1 al 1 000. El alumnado lo mide y anota el ratio \textit{complejo/simple} en la pizarra. El docente cierra conectando los resultados: el consumo está en el tiempo de CPU activo.
+
+
+
+
+\subsubsection{Sesión 2 (50 min): \textit{Fibonacci: encontrar y arreglar lo que falla}}
+
+
+\textbf{Objetivo:} Medir un código con ineficiencias reales, aplicar mejoras iterativas y cuantificar el ahorro a escala.
+
+
+\textbf{(5 min) Escenario y entrega del código} El docente presenta la empresa ficticia \textit{GreenCalc S.L.}: \textit{"Tenemos un servicio que ejecuta este cálculo 5 millones de veces al día. El equipo de operaciones detectó picos de CPU. Vuestra misión: medirlo, identificar los problemas y corregirlos."} Se reparte la Ficha P1 y el fichero \texttt{fibonacci\\_lento.py}.
+
+
+El código tiene tres ineficiencias deliberadas:
+
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+\textbf{\#} & \textbf{Ineficiencia} & \textbf{Descripción} \\
+\hline
+1 & \texttt{time.sleep(0.0001)} en cada llamada & Simula un log mal implementado \\
+\hline
+2 & Conversión innecesaria de str(n) a int(str(n)) en cada llamada & Operación de cadena inútil, visible con cProfile \\
+\hline
+3 & Recursividad sin memoización: $O(2^n)$ & El problema principal \\
+\hline
+\end{tabularx}
+\caption{Sesión 2 (50 min): \textit{Fibonacci: encontrar y arreglar lo que falla}}
+\label{tab:sesion-2-50-min-fibonacci-encontrar-y-arreglar-lo-}
+\end{table}
+
+
+\textbf{(10 min) Medición del código original} El alumnado ejecuta \texttt{fibonacci\\_lento.py} con CodeCarbon para n=35 y anota tiempo y emisiones como \textbf{dato base}.
+
+
+\textbf{(20 min) Optimización guiada: tres rondas} El docente conduce el proceso paso a paso, señalando cada problema, explicando el mecanismo y pidiendo al alumno que aplique el cambio y mida. Tras cada ronda, el alumno calcula el \% de reducción y lo anota.
+
+
+\textbf{(10 min) Puesta en común y ranking} Cada alumno anota en la pizarra su \% de ahorro total. El ranking compara porcentajes de reducción (no valores absolutos, que dependen del hardware). Cuando toda la clase ve ahorros superiores al 99 \%, la norma social consolida que esa mejora es posible y esperable \cite{cialdini2001influence}.
+
+
+\textbf{(5 min) Extrapolación y cierre} El alumnado calcula el ahorro diario multiplicando su reducción por 5 millones de ejecuciones, lo convierte a kg CO$_2$eq/día y lo traduce a una equivalencia de la Tabla 4.3.
+
+
+
+
+\subsubsection{Ficha P1: \textit{Medir para mejorar}}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\textbf{} & \textbf{Tiempo (s)} & \textbf{Emisiones (gCO$_2$eq)} & \textbf{Reducción vs. base} \\
+\hline
+\textbf{Código original} (\texttt{fibonacci\\_lento.py}) &  &  & — \\
+\hline
+\textbf{Mejora 1}: sin \texttt{sleep} &  &  & \% \\
+\hline
+\textbf{Mejora 2}: sin conversión de cadena &  &  & \% \\
+\hline
+\textbf{Mejora 3}: versión iterativa &  &  & \% \\
+\hline
+\end{tabularx}
+\caption{Ficha P1: \textit{Medir para mejorar}}
+\label{tab:ficha-p1-medir-para-mejorar}
+\end{table}
+
+
+\textbf{Extrapolación (empresa ficticia \textit{GreenCalc S.L.}):}
+
+
+\begin{quote}
+Ahorro por ejecución (gCO$_2$eq): \_\_\_\_\_\_ Nº de ejecuciones/día: 5 000 000 \textbf{Ahorro diario total: \\_\\_\\_\\_\\_\\_ gCO$_2$eq = \\_\\_\\_\\_\\_\\_ kg CO$_2$eq} Equivale a: \_\_\_\_\_\_ (consulta la Tabla 4.3)
+\end{quote}
+
+
+\textbf{Reflexión (5 líneas):} ¿Qué ineficiencia ha producido mayor reducción? ¿Por qué? ¿Qué habrías hecho diferente si hubieras escrito ese código desde cero?
+
+
+
+
+
+
+\section{Práctica 2: Analizar · \textit{El servidor que no para de crecer} (RA4)}
+
+
+\subsection{Ficha técnica}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Campo} & \textbf{Valor} \\
+\hline
+\textbf{Título} & \textit{El servidor que no para de crecer} \\
+\hline
+\textbf{RA asociado} & RA4: POO (clases, atributos, métodos, instanciación) \\
+\hline
+\textbf{CE integrado} & Se ha analizado el impacto en el consumo de memoria de las decisiones de instanciación de objetos, cuantificando con tracemalloc el coste de distintas arquitecturas de clases \\
+\hline
+\textbf{Metodología} & ABP/PBL en equipos de 3 (roles rotativos: Portavoz / Programador/a / Auditor/a) \\
+\hline
+\textbf{Duración} & 3 sesiones $\times$ 50 min \\
+\hline
+\textbf{Herramientas} & \texttt{tracemalloc} (stdlib), modelo CO$_2$ manual, VS Code \\
+\hline
+\textbf{Entregable} & Informe técnico + presentación de 5 min por equipo \\
+\hline
+\end{tabular}
+\caption{Ficha técnica de la práctica P2}
+\label{tab:ficha-tecnica-p2}
+\end{table}
+
+
+\subsection{Objetivo}
+
+
+El alumnado diagnostica una fuga de memoria en un servidor Python real, aplica una refactorización orientada a objetos que elimina la retención innecesaria y cuantifica el ahorro en RAM y CO$_2$eq. El escenario: \textit{SensorStream S.L.} tiene un servidor que "funciona pero consume RAM de forma progresiva hasta que el SO lo mata". La causa no es un bug obvio: está en decisiones de diseño de clases. Al terminar, el equipo habrá demostrado que la arquitectura de objetos tiene consecuencias energéticas medibles.
+
+
+\subsection{Desarrollo de las sesiones}
+
+
+\subsubsection{Sesión 1 (50 min): \textit{El briefing: ¿qué sabemos y qué necesitamos averiguar?}}
+
+
+\textbf{(5 min) Formación de equipos y entrega del material}
+
+
+El docente forma los equipos de 3 (mezcla de perfiles, no afinidad libre), asigna los roles iniciales y reparte el brief impreso y el código sin explicar el problema.
+
+
+\begin{quote}
+\textit{"Tenéis un brief de un cliente. Leedlo en equipo. A los 5 minutos os pregunto qué entendisteis."}
+\end{quote}
+
+
+\textbf{(15 min) Análisis ABP del brief: Ficha de Equipo P2 (parte 1)}
+
+
+Cada equipo trabaja con el brief y completa:
+
+\begin{itemize}
+\item \textbf{Lo que sabemos} (hechos del brief)
+\item \textbf{Lo que no sabemos} (preguntas de investigación)
+\item \textbf{Hipótesis inicial}: \textit{"Creemos que la RAM crece porque \\_\\_\\_ y lo demostraremos mirando \\_\\_\\_"}
+\end{itemize}
+
+
+El docente circula respondiendo con preguntas: \textit{"¿Qué os dice el brief sobre eso?"}, \textit{"¿Qué haría un programador que recibe este código por primera vez?"}
+
+
+\textbf{(25 min) Primera exploración: ejecución y perfilado inicial}
+
+
+El equipo lee \texttt{sensor\\_monitor.py} completo sin ejecutar (5 min), luego ejecuta \texttt{stress\\_test.py} para n=100, 500, 1000. El Auditor/a copia los datos; el Portavoz lee las líneas con mayor \texttt{+KiB} en tracemalloc. El Programador/a puede ejecutar variaciones libres para verificar hipótesis.
+
+
+\textbf{Cierre (5 min):} cada equipo declara en voz alta: \textit{"Creemos que la fuga viene de \\_\\_\\_"}. El docente las escribe en la pizarra sin comentar.
+
+
+
+
+\subsubsection{Sesión 2 (50 min): \textit{La investigación: rastrear la retención con precisión}}
+
+
+\textbf{(10 min) Rotación de roles y revisión de hipótesis}
+
+
+Se rotan los roles. El docente pregunta quién sitúa la causa en \texttt{ProcesadorDatos}, quién en \texttt{GestorAlertas}, quién en ambas.
+
+
+\textbf{(25 min) Diagnóstico de precisión con tracemalloc}
+
+
+Los equipos trabajan de forma autónoma. Si un equipo lleva más de 10 minutos sin avanzar, el Auditor/a puede pedir al docente \textbf{una sola pregunta socrática} de desbloqueo (\textit{"¿Qué pasa con el tamaño de \texttt{\\\_historial} cuando doblas \texttt{n}?"}, \textit{"¿Cuántos objetos \texttt{ConfiguracionApp} se crean para n=1000?"}).
+
+
+Los equipos completan la \textbf{Ficha P2: Parte 2} (mapa de retención: clase / atributo / ¿crece? / por qué) y la causa principal con el dato que la demuestra.
+
+
+\textbf{(10 min) Diseño de la solución: Tarjeta de Decisión}
+
+
+Cada equipo elige su estrategia de refactorización:
+
+\begin{itemize}
+\item \textbf{Estrategia A:} Singleton para \texttt{ConfiguracionApp} + eliminar \texttt{dict(config.\\_parametros)} del registro
+\item \textbf{Estrategia B:} \texttt{collections.deque(maxlen=X)} para \texttt{\\_historial} (buffer circular)
+\item \textbf{Estrategia C:} Eliminación del \texttt{\\_registro\\_config} completo
+\item \textbf{Estrategia D:} Combinación de varias
+\end{itemize}
+
+
+La tarjeta incluye: solución elegida / por qué resuelve el problema / trade-off asumido / métrica de éxito cuantificada.
+
+
+\textbf{(5 min) Cierre}
+
+
+Cada equipo escribe su predicción: \textit{"Con nuestra solución, el pico RAM para n=500 pasará de \\_\\_\\_ MB a menos de \\_\\_\\_ MB."}
+
+
+
+
+\subsubsection{Sesión 3 (50 min): \textit{La defensa: datos, código y argumentos}}
+
+
+\textbf{(20 min) Implementación y medición antes/después}
+
+
+Los equipos implementan la refactorización y ejecutan \texttt{stress\\_test.py} con la versión modificada. Completan la \textbf{Tabla de Resultados} (n=100, 500, 1000 MB; versión original / refactorizada / reducción \%). El Auditor/a calcula la estimación de CO$_2$eq y la extrapolación a producción.
+
+
+\textbf{(20 min) Ronda de presentaciones: "El tribunal técnico"}
+
+
+Cada equipo presenta en \textbf{5 minutos exactos} con estructura obligatoria: (1) diagnóstico con dato, (2) solución y código refactorizado, (3) datos antes/después y extrapolación, (4) trade-off asumido. El docente anota la tabla comparativa en la pizarra.
+
+
+\textbf{(10 min) Debate sobre trade-offs}
+
+
+El docente lanza cuatro preguntas sin revelar "la respuesta correcta": sobre si eliminar \texttt{\\_registro\\_config} es siempre la mejor solución, si un historial ilimitado en RAM tiene sentido, qué equipo sufriría más si el cliente necesita auditar estados pasados, y cuánto CO$_2$eq se ahorraría si el servidor no necesitara reiniciarse cada 8 horas. La pregunta final cierra el arco ambiental: la decisión de diseño de clases conecta con el impacto sistémico.
+
+
+
+
+\subsection{Entregable}
+
+
+Informe técnico por equipo (PDF o documento en plataforma):
+
+\begin{enumerate}
+\item Ficha P2: Parte 1 (análisis del brief: sabemos / no sabemos / hipótesis)
+\item Mapa de retención de memoria (Parte 2)
+\item Código original con las líneas causantes marcadas y explicadas en prosa
+\item Código refactorizado con justificación de la decisión
+\item Tabla de resultados antes/después (n=100, 500, 1000)
+\item Estimación CO$_2$eq antes/después + extrapolación a 8 h de producción (cálculo explícito)
+\item Trade-offs: qué pierde la solución y en qué escenario sería problemático
+\item Reflexión del equipo (5–8 líneas): \textit{"¿Qué implicación tiene esto para el diseño de clases en un proyecto real de DAM?"}
+\end{enumerate}
+
+
+
+
+\section{Práctica 3: Optimizar · \textit{Datos que cuestan energía} (RA5)}
+
+
+\subsection{Ficha técnica}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Campo} & \textbf{Valor} \\
+\hline
+\textbf{Título} & \textit{Datos que cuestan energía} \\
+\hline
+\textbf{RA asociado} & RA5: Realiza operaciones de entrada y salida de información, utilizando procedimientos específicos del lenguaje y librerías de clases \\
+\hline
+\textbf{CE integrado} & Se ha comparado el consumo energético de diferentes estrategias de E/S (carga completa vs. streaming), seleccionando la más eficiente energéticamente \\
+\hline
+\textbf{Metodología} & ABP individual \\
+\hline
+\textbf{Duración} & 3 sesiones $\times$ 50 min \\
+\hline
+\textbf{Herramientas} & CodeCarbon, tracemalloc (stdlib), pandas, Python 3.10+, VS Code \\
+\hline
+\textbf{Entregable} & Script optimizado + informe con tabla de tres métricas, gráfico de consumo de memoria y justificación de la estrategia \\
+\hline
+\end{tabular}
+\caption{Ficha técnica de la práctica P3}
+\label{tab:ficha-tecnica-p3}
+\end{table}
+
+
+\subsection{Objetivo}
+
+
+El alumnado evalúa y selecciona la estrategia de E/S más eficiente para procesar datasets de gran tamaño. El escenario: un sistema IoT con 50 sensores genera un CSV de más de un millón de filas; la carga completa con \texttt{pd.read\\_csv()} agota la RAM del servidor. Al terminar, el alumno habrá demostrado con mediciones propias que la misma operación puede hacerse con un 90 \% menos de memoria, y habrá calculado el ahorro energético equivalente en un servidor cloud.
+
+
+\subsubsection{Sesión 1 (50 min): La crisis de memoria}
+
+
+\textbf{(15 min) Fase 1: Experiencia Concreta} El docente ejecuta \texttt{generar\\_dataset.py} en el proyector y observa junto al alumnado cómo el CSV crece hasta \textasciitilde{}80 MB. A continuación ejecuta \texttt{carga\\_mala.py} con el monitor de recursos visible: la RAM sube bruscamente. Pregunta orientadora: \textit{"¿Qué pasaría si el archivo tuviese 500 MB? ¿Y 5 GB?"}
+
+
+\textbf{(35 min) Fase 2: Observación Reflexiva (inicio)} El alumnado ejecuta \texttt{carga\\_mala.py} y \texttt{carga\\_buena.py} instrumentados con \texttt{tracemalloc} y CodeCarbon. Registra en la tabla de la Ficha P3: pico de memoria (MB), tiempo de ejecución (s) y emisiones (gCO$_2$eq) para ambas estrategias. Verifica que ambas producen el mismo resultado.
+
+
+
+
+\subsubsection{Sesión 2 (50 min): Medir y comprender}
+
+
+\textbf{(20 min) Fase 2: Observación Reflexiva (cierre)} El alumnado completa el gráfico de uso de memoria a lo largo del tiempo para cada estrategia (matplotlib o similar) y calcula el porcentaje de reducción de memoria pico.
+
+
+\textbf{(30 min) Fase 3: Conceptualización Abstracta} El alumnado formaliza: (a) la diferencia entre carga completa y streaming como $O(n)$ vs. $O(k)$, donde k es el tamaño del chunk; (b) por qué el streaming es el estándar en sistemas de grandes datos; (c) la relación entre consumo de RAM y coste energético en servidores cloud (precio por GB·hora en AWS/Azure).
+
+
+
+
+\subsubsection{Sesión 3 (50 min): Extender y redactar}
+
+
+\textbf{(50 min) Fase 4: Experimentación Activa} El alumnado extiende la solución de streaming para calcular en un único paso cuatro estadísticas (media, desviación típica, mínimo y máximo). Opcionalmente explora la lectura del CSV comprimido con gzip. Redacta el informe comparando las tres variantes: carga completa, streaming y streaming con compresión.
+
+
+\textit{Véase Anexo C: código en GitHub en \texttt{practicas/p3\_optimizar/}.}
+
+
+
+
+
+\section{Práctica 4: Actuar · \textit{La cola verde} (RA9)}
+
+
+\subsection{Ficha técnica}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Campo} & \textbf{Valor} \\
+\hline
+\textbf{Título} & \textit{La cola verde} \\
+\hline
+\textbf{RA asociado} & RA9: Elabora y depura programas que hacen uso de estructuras de almacenamiento dinámicas \\
+\hline
+\textbf{CE integrado} & Se ha implementado una estrategia de planificación temporal de tareas considerando la intensidad de carbono de la red eléctrica \\
+\hline
+\textbf{Metodología} & ABP en grupos de 3 \\
+\hline
+\textbf{Duración} & 4 sesiones $\times$ 50 min \\
+\hline
+\textbf{Herramientas} & CodeCarbon, Electricity Maps API (CSV simulado), Python 3.10+, VS Code, pytest \\
+\hline
+\textbf{Entregable} & Cola verde funcional + tests + informe con cálculo de emisiones evitadas y pitch de 5 min \\
+\hline
+\end{tabular}
+\caption{Ficha técnica de la práctica P4}
+\label{tab:ficha-tecnica-p4}
+\end{table}
+
+
+\subsection{Objetivo}
+
+
+El alumnado implementa una cola de tareas \textit{carbon-aware}: un sistema que decide cuándo ejecutar cada tarea según la intensidad de carbono de la red eléctrica española. Las tareas urgentes se ejecutan siempre; las diferibles, solo cuando la intensidad está por debajo del umbral definido por el equipo. Al terminar, el alumnado habrá medido con CodeCarbon las emisiones reales de su sistema frente a una versión sin carbon-awareness y habrá argumentado el ahorro a escala de producción.
+
+
+\subsubsection{Sesión 1 (50 min): El problema y la arquitectura}
+
+
+\textbf{(15 min) Fase 1: Experiencia Concreta} El docente proyecta el gráfico de variación horaria de la intensidad de carbono de España (CSV histórico) y formula el reto: \textit{"Vuestro equipo tiene que decidir cuándo ejecutar tareas de procesamiento pesado para minimizar su huella de carbono. ¿Cómo lo haríais?"} Los grupos esbozan su solución en papel (5 min) y la comparten brevemente.
+
+
+\textbf{(35 min) Fase 2: Observación Reflexiva} Los grupos analizan el CSV de intensidad, identifican los patrones horarios (madrugada y mediodía solar como ventanas de baja intensidad) y discuten qué información necesita su sistema para tomar decisiones. Cada grupo dibuja el diagrama de su arquitectura y lo describe en el informe del proyecto.
+
+
+
+
+\subsubsection{Sesión 2 (50 min): Implementar la cola}
+
+
+\textbf{(50 min) Fase 3: Conceptualización Abstracta} Los grupos implementan la clase \texttt{ColaVerde} con dos métodos principales: \texttt{encolar(tarea, urgente, umbral\\_co2)} y \texttt{ejecutar\\_pendientes(intensidad\\_actual)}. Las tareas urgentes se ejecutan inmediatamente; las diferibles, solo si la intensidad actual es inferior al umbral. Se introduce \texttt{heapq} como estructura interna para la cola de prioridad. El docente circola y orienta en los bloqueos de implementación.
+
+
+
+
+\subsubsection{Sesión 3 (50 min): Medir y optimizar}
+
+
+\textbf{(50 min) Fase 4: Experimentación Activa} Los grupos instrumentan su sistema con CodeCarbon y simulan una jornada de trabajo con el CSV histórico: ejecutan el mismo conjunto de tareas con y sin carbon-awareness. Calculan las emisiones de cada escenario y la diferencia. Añaden tests con \texttt{pytest} para validar el comportamiento de la cola ante distintos valores de intensidad. El informe incorpora la tabla comparativa de emisiones.
+
+
+
+
+\subsubsection{Sesión 4 (50 min): Demo Day}
+
+
+\textbf{(50 min) Cierre y presentación} Cada grupo realiza un \textit{pitch} de 5 min + 3 min de preguntas. Contenido obligatorio: (1) el problema y la arquitectura, (2) una decisión de diseño justificada energéticamente, (3) emisiones del sistema frente a la versión sin carbon-awareness, (4) impacto estimado a escala de producción. El alumnado conecta su solución con la Ficha C de P0 y responde: \textit{"¿Qué ha cambiado en tu visión del software desde el inicio del curso?"}
+
+
+\textit{Véase Anexo C: código en GitHub en \texttt{practicas/p4\_actuar/}.}
+
+
+
+
+\section{Temporalización e integración en el currículo}
+
+
+Las cinco prácticas se insertan en la programación anual del módulo MP0485 sin desplazar ninguna unidad didáctica existente. P0 se ubica en las semanas 1-2, antes del inicio formal de los RA, como práctica de apertura transversal: establece el marco de sentido que otorgará propósito a las métricas de P1–P4. La Tabla 4.2 muestra el encaje temporal según la distribución horaria del Real Decreto 450/2010.
+
+
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+\hline
+\textbf{Práctica} & \textbf{Semana del curso} & \textbf{Sesiones (50 min)} & \textbf{Horas} & \textbf{RA en curso en ese momento} & \textbf{Posición en la UD} \\
+\hline
+\textbf{P0}: \textit{¿Cuánto contamina tu código?} & Semanas 1-2 & 2 & 1,7 h & Inicio del curso (antes de RA1) & Apertura del curso como práctica de encuadre transversal \\
+\hline
+\textbf{P1}: \textit{¿Cuánto pesa tu algoritmo?} & Semanas 5-6 & 2 & 1,7 h & RA3: Estructuras de control & Cierre de la UD de bucles y recursividad, antes de la evaluación parcial \\
+\hline
+\textbf{P2}: \textit{El coste oculto de los objetos} & Semanas 11-12 & 3 & 2,5 h & RA4: Programación orientada a objetos & Tras la introducción del patrón Singleton; como práctica de consolidación \\
+\hline
+\textbf{P3}: \textit{Datos que cuestan energía} & Semanas 16-17 & 3 & 2,5 h & RA5: E/S y ficheros & Tras la introducción de \texttt{pandas.read\\_csv}; como actividad de extensión y optimización \\
+\hline
+\textbf{P4}: \textit{La cola verde} & Semanas 22-23 & 4 & 3,3 h & RA9: Estructuras dinámicas & Tras la introducción de \texttt{heapq} y colas de prioridad; como proyecto de síntesis \\
+\hline
+\textbf{Total Green IT} & — & \textbf{14} & \textbf{$\approx$ 11,7 h} & — & 4,6 \% de las 256 h del módulo \\
+\hline
+\end{tabularx}
+\caption{Temporalización de las prácticas Green IT en MP0485: Programación (256 h anuales, \textasciitilde{}8 h/semana, 32 semanas)}
+\label{tab:temporalizacion-de-las-practicas-green-it-en-mp048}
+\end{table}
+
+
+La distribución temporal garantiza tres propiedades pedagógicas. En primer lugar, la \textbf{separación temporal adecuada} (5-6 semanas entre prácticas) permite consolidar cada RA antes de añadir la dimensión de sostenibilidad, evitando la sobrecarga cognitiva. En segundo lugar, la \textbf{progresión acumulativa} de herramientas (CodeCarbon se introduce en P1 y se reutiliza en P3; los datos de la Ficha C de P0 se recuperan en P4) reduce el tiempo de aprendizaje de cada nueva herramienta y crea continuidad de sentido. En tercer lugar, la \textbf{posición estratégica} de cada práctica al cierre de su Unidad Didáctica garantiza que el alumnado dispone de los prerrequisitos técnicos necesarios y que la práctica funciona como síntesis, no como introducción prematura.
+
+
+
+
+\section{Recursos y requisitos técnicos}
+
+
+\subsection{Entorno de software}
+
+
+Todas las prácticas requieren el siguiente entorno base, compatible con cualquier ordenador del aula de informática con Windows 10/11, macOS 12+ o Ubuntu 20.04+:
+
+
+\textit{Véase Anexo C (código en GitHub).}
+
+
+Para \textbf{P4} es necesario además:
+
+\begin{itemize}
+\item Cuenta gratuita en app.electricitymaps.com\footnote{\url{https://app.electricitymaps.com}} (registro con correo del centro; proporciona 50 peticiones/mes, suficiente para la práctica) \textbf{o} uso del modo simulado incluido en el código de referencia, que no requiere API key.
+\item Módulo \texttt{requests} (incluido en la lista anterior).
+\end{itemize}
+
+
+\subsection{Contingencias sin internet}
+
+
+Todas las prácticas están diseñadas para funcionar sin conexión a internet:
+
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{|X|X|X|}
+\hline
+\textbf{Práctica} & \textbf{Dependencia online} & \textbf{Alternativa offline} \\
+\hline
+P0 & Recursos web del Jigsaw (IEA, Electricity Maps, Website Carbon Calculator) & Descargar los recursos clave en PDF o capturas de pantalla antes de la sesión; el cálculo de la Ficha C no requiere internet \\
+\hline
+P1, P2, P3 & CodeCarbon (descarga factores de emisión) & \texttt{offline=True} + \texttt{country\\_iso\\_code="ESP"} en el constructor; usa el factor medio anual de España (\textasciitilde{}0,20 kgCO$_2$/kWh) \\
+\hline
+P4 & Electricity Maps API & Función \texttt{\\_simular\\_intensidad()} incluida en \texttt{electricity\\_maps.py}; no requiere modificación del código de la ColaVerde \\
+\hline
+\end{tabularx}
+\caption{Contingencias sin internet}
+\label{tab:contingencias-sin-internet}
+\end{table}
+
+
+\subsection{Distribución del material en el aula}
+
+
+Se recomienda crear una carpeta compartida en la red del aula (o repositorio Git privado del centro) con la siguiente estructura:
+
+
+\textit{Véase Anexo C (código en GitHub).}
+
+
+\subsection{Requisitos mínimos de hardware}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{|X|X|X|X|}
+\hline
+\textbf{Componente} & \textbf{Mínimo recomendado} & \textbf{Observación} & \textbf{} \\
+\hline
+RAM & 4 GB & Para P3 con dataset de 1 M filas; con 2 GB reducir a 200 K filas &  \\
+\hline
+CPU & Cualquier procesador de doble núcleo & P1 con \texttt{n=35} tarda \textasciitilde{}3-5 s incluso en hardware lento &  \\
+\hline
+Disco & 500 MB libres & Para el dataset de P3 (\textasciitilde{}100 MB) y los entornos virtuales &  \\
+\hline
+Python & 3.10+ & Necesario para la sintaxis `X & Y` en type hints \\
+\hline
+\end{tabularx}
+\caption{Requisitos mínimos de hardware}
+\label{tab:requisitos-minimos-de-hardware}
+\end{table}
+
+
+\subsection{Preparación previa del docente}
+
+
+Antes de cada práctica:
+
+\begin{enumerate}
+\item Ejecutar el script de medición en el propio ordenador y anotar los valores de referencia (CO$_2$, tiempo, memoria) para calibrar las expectativas del alumnado según el hardware del aula.
+\item Verificar que CodeCarbon genera correctamente el fichero \texttt{emissions.csv}.
+\item Para P4: ejecutar \texttt{python main.py} en modo simulado y comprobar que al menos una tarea se difiere en los tres ciclos de prueba.
+\end{enumerate}
