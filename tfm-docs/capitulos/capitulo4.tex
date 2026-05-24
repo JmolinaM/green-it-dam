@@ -252,12 +252,9 @@ Ahorro por ejecución (gCO$_2$eq): \_\_\_\_\_\_ Nº de ejecuciones/día: 5 000 0
 \subsection{Objetivo}
 
 
-\textbf{Marco conceptual: emisiones incorporadas y el principio de Hardware Eficiente.}
-Fabricar un servidor, un portátil o un smartphone consume energía y materiales antes de encenderse por primera vez. Esa \textit{huella de carbono de fabricación} —también llamada \textbf{emisiones incorporadas} (\textit{embodied carbon})— puede representar entre el 60 y el 80 \% del impacto ambiental total del equipo a lo largo de su vida útil~\cite{gupta2021chasing}. Una vez que el hardware existe, su única forma de "amortizar" esa deuda ambiental es \textbf{durar el máximo tiempo posible}: si un servidor de 500 kgCO$_2$eq de fabricación funciona 5 años, imputa 100 kgCO$_2$eq por año; si dura 10, imputa solo 50.
+Como se introduce en el apartado~\ref{sec:carbono-incorporado} (\textit{carbono operacional vs.\ incorporado}), fabricar un dispositivo ya genera una \textbf{huella de carbono incorporada} que se diluye cuantos más años dura el equipo. Cuidar el hardware pasa, en gran medida, por un software que no lo fuerce más allá de sus límites: un programa con fugas de memoria obliga a reinicios frecuentes y acorta la vida útil del servidor.
 
-Aquí entra el \textbf{principio P.III del Green Software Engineering}: \textit{Hardware eficiente}. El software puede acelerar o retrasar la obsolescencia del hardware: un programa que consume RAM de forma ilimitada obliga a reiniciar el servidor con frecuencia, acorta su vida útil y, con ello, concentra las emisiones incorporadas en menos años. Optimizar el uso de memoria no es solo cuestión de rendimiento: \textbf{es una decisión de sostenibilidad}.
-
-El alumnado diagnostica una fuga de memoria en un servidor Python real, aplica una refactorización orientada a objetos que elimina la retención innecesaria y cuantifica el ahorro en RAM y CO$_2$eq. El escenario: \textit{SensorStream S.L.} tiene un servidor que "funciona pero consume RAM de forma progresiva hasta que el SO lo mata". La causa no es un bug obvio: está en decisiones de diseño de clases. Al terminar, el equipo habrá demostrado que la arquitectura de objetos tiene consecuencias energéticas medibles —y que mantener el servidor corriendo más horas reduce la fracción de emisiones incorporadas que le corresponde cada día.
+El alumnado diagnostica una fuga de memoria en un servidor Python real, aplica una refactorización orientada a objetos que la elimina y cuantifica el ahorro en RAM y CO$_2$eq, conectando la decisión de diseño de clases con su impacto ambiental.
 
 
 \subsection{Desarrollo de las sesiones}
