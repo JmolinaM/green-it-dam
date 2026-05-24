@@ -242,7 +242,7 @@ Ahorro por ejecución (gCO$_2$eq): \_\_\_\_\_\_ Nº de ejecuciones/día: 5 000 0
 
 \fichapractica{P2}{El servidor que no para de crecer}
   {RA4: POO (clases, atributos, métodos, instanciación)}
-  {Se ha analizado el impacto en el consumo de memoria de las decisiones de instanciación de objetos, cuantificando con tracemalloc el coste de distintas arquitecturas de clases}
+  {Se ha analizado el impacto en el consumo de memoria de las decisiones de instanciación de objetos, cuantificando el coste de distintas arquitecturas de clases mediante medición de pico de memoria y crecimiento por instancia (\texttt{tracemalloc})}
   {ABP/PBL en equipos de 3 (roles rotativos: Portavoz / Programador/a / Analista de datos)}
   {3 sesiones $\times$ 50 min}
   {P.III — Hardware eficiente · P.IV — Medición SCI}
@@ -310,7 +310,7 @@ El docente circula respondiendo con preguntas: \textit{"¿Qué os dice la direct
 \textbf{(15 min) Primera exploración: ejecución y perfilado inicial}
 
 
-El equipo lee \texttt{sensor\_monitor.py} completo sin ejecutar (5 min), luego ejecuta \texttt{stress\_test.py} para n=100, 500, 1000. El Analista de datos copia los datos; el Portavoz lee las líneas con mayor \texttt{+KiB} en tracemalloc. El Programador/a puede ejecutar variaciones libres para verificar hipótesis.
+El equipo lee \texttt{sensor\_monitor.py} completo sin ejecutar (5 min), luego ejecuta \texttt{stress\_test.py} para n=100, 500, 1000. El Analista de datos copia los datos; el Portavoz lee las líneas con mayor crecimiento de memoria por bloque (\texttt{+KiB} en \texttt{tracemalloc}). El Programador/a puede ejecutar variaciones libres para verificar hipótesis.
 
 
 \textbf{Cierre (5 min):} cada equipo declara en voz alta: \textit{"Creemos que la fuga viene de \_\_\_"}. El docente las escribe en la pizarra sin comentar.
@@ -327,7 +327,7 @@ El equipo lee \texttt{sensor\_monitor.py} completo sin ejecutar (5 min), luego e
 Se rotan los roles. El docente pregunta quién sitúa la causa en \texttt{ProcesadorDatos}, quién en \texttt{GestorAlertas}, quién en ambas.
 
 
-\textbf{(25 min) Diagnóstico de precisión con tracemalloc}
+\textbf{(25 min) Diagnóstico de precisión: rastreo de retención de memoria (\texttt{tracemalloc})}
 
 
 Los equipos trabajan de forma autónoma. Si un equipo lleva más de 10 minutos sin avanzar, el Analista de datos puede pedir al docente \textbf{una sola pregunta socrática} de desbloqueo (\textit{"¿Qué pasa con el tamaño de \texttt{\_historial} cuando doblas \texttt{n}?"}, \textit{"¿Cuántos objetos \texttt{ConfiguracionApp} se crean para n=1000?"}).
