@@ -198,53 +198,90 @@ El marco conceptual de la GSE se articula en torno a la fórmula fundamental de 
 \textbf{Emisión de Carbono (C) = Energía Consumida (E) $\times$ Intensidad de Carbono (CI)}
 
 
-Un software sostenible debe impactar positivamente en ambos factores (E y CI), además de considerar las emisiones asociadas al hardware que lo soporta. La figura~\ref{fig:gse-principios} ilustra cómo los tres principios principales de la GSE reducen la huella de carbono y cómo se aplican en las prácticas de este TFM:
+Un software sostenible debe impactar positivamente en ambos factores (E y CI), además de considerar las emisiones asociadas al hardware que lo soporta. La figura~\ref{fig:gse-principios} ilustra los tres principios de la GSE:
 
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[
-  col1/.style={rectangle, rounded corners=4pt, minimum width=3.2cm, minimum height=1.0cm,
-               draw=green!60!black, fill=green!15, align=center, font=\small\bfseries},
-  col2/.style={rectangle, rounded corners=4pt, minimum width=5.6cm, minimum height=1.0cm,
-               draw=gray!40, fill=gray!6, align=center, font=\small},
-  col3/.style={rectangle, rounded corners=4pt, minimum width=2.4cm, minimum height=1.0cm,
-               draw=practica1!80!black, fill=practica1!30, align=center, font=\small\bfseries},
-  hdr/.style={font=\small\bfseries\itshape, text=gray!60}
+  card/.style={rectangle, rounded corners=8pt, minimum width=3.8cm,
+               minimum height=5.6cm, draw=green!55!black, fill=green!8,
+               text width=3.4cm, align=center},
+  ctitle/.style={font=\small\bfseries, align=center},
+  cdesc/.style={font=\footnotesize, align=center, text width=3.0cm},
+  bar/.style={rectangle, draw=none, fill=green!45!black},
+  slot/.style={rectangle, rounded corners=2pt, minimum width=0.45cm,
+               minimum height=0.7cm, draw=none},
+  device/.style={rectangle, rounded corners=3pt, draw=gray!60,
+                 fill=gray!15, minimum width=1.0cm, minimum height=0.7cm}
 ]
-  % Headers
-  \node[hdr] (h1) at (0,0)     {Principio GSE};
-  \node[hdr] (h2) at (4.5,0)   {Qué reduce};
-  \node[hdr] (h3) at (9.3,0)   {Práctica};
 
-  % Row 1 — P.I Eficiencia
-  \node[col1] (r1a) at (0,-1.3)   {P.\,I\\[-2pt]\footnotesize Eficiencia energética};
-  \node[col2] (r1b) at (4.5,-1.3) {CPU · memoria · red:\\[-2pt]\footnotesize menos energía para el mismo resultado};
-  \node[col3] (r1c) at (9.3,-1.3) {P1 · P3};
+%% ---- CARD 1: Eficiencia energética ----
+\node[card, fill=green!8, draw=green!55!black] (c1) at (0,0) {};
 
-  % Row 2 — P.II Carbon-Aware
-  \node[col1, fill=practica4!20, draw=practica4!70!black]
-        (r2a) at (0,-2.8)   {P.\,II\\[-2pt]\footnotesize Carbon-Aware};
-  \node[col2] (r2b) at (4.5,-2.8) {Intensidad de carbono (CI):\\[-2pt]\footnotesize ejecutar cuando la red eléctrica es más verde};
-  \node[col3, fill=practica4!30, draw=practica4!80!black]
-        (r2c) at (9.3,-2.8) {P4};
+% Mini bar chart: antes (tall, red) vs después (short, green)
+\node[bar, fill=red!40, minimum width=0.55cm, minimum height=1.6cm]
+  at (-0.5, 1.6) {};
+\node[bar, fill=green!50!black, minimum width=0.55cm, minimum height=0.7cm]
+  at (0.5, 1.15) {};
+\node[font=\tiny, text=gray!70] at (-0.5, 0.65) {antes};
+\node[font=\tiny, text=gray!70] at (0.5, 0.65)  {después};
+\draw[->, thick, green!50!black] (-0.1, 1.3) -- (0.2, 0.9);
 
-  % Row 3 — P.III Hardware
-  \node[col1, fill=practica3!30, draw=practica3!70!black]
-        (r3a) at (0,-4.3)   {P.\,III\\[-2pt]\footnotesize Hardware eficiente};
-  \node[col2] (r3b) at (4.5,-4.3) {Carbono incorporado:\\[-2pt]\footnotesize menos RAM/CPU prolonga la vida del equipo};
-  \node[col3, fill=practica3!40, draw=practica3!80!black]
-        (r3c) at (9.3,-4.3) {P2};
+\node[ctitle] at (0, 0.0) {Principio I\\Eficiencia energética};
+\draw[gray!30] (-1.6,-0.25) -- (1.6,-0.25);
+\node[cdesc] at (0,-1.2)
+  {El mismo resultado con menos energía:\\
+   optimizar algoritmos,\\
+   memoria y transferencia de datos.\\[4pt]
+   \textit{Reducir E en la fórmula}\\
+   CO\textsubscript{2} = \textbf{E} $\times$ CI};
 
-  % Separator lines
-  \draw[gray!25, line width=0.4pt] (-1.8,-0.55) -- (10.8,-0.55);
-  \draw[gray!20, line width=0.3pt] (-1.8,-2.05) -- (10.8,-2.05);
-  \draw[gray!20, line width=0.3pt] (-1.8,-3.55) -- (10.8,-3.55);
+%% ---- CARD 2: Carbon-Aware ----
+\node[card, fill=practica4!12, draw=practica4!70!black] (c2) at (4.4,0) {};
+
+% Mini timeline: slots grey/grey/green/green showing best moment
+\foreach \x/\col in {-0.9/gray!25, -0.45/gray!25, 0.0/green!40, 0.45/green!40, 0.9/gray!25} {
+  \node[slot, fill=\col] at (\x+4.4, 1.5) {};
+}
+\node[font=\tiny, text=gray!60] at (4.4, 0.85) {hora del día →};
+\draw[->, thick, practica4!70!black] (4.4-0.22, 1.1) -- (4.4+0.22, 1.1)
+  node[midway, above, font=\tiny, text=practica4!80!black] {mejor momento};
+
+\node[ctitle] at (4.4, 0.0) {Principio II\\Carbon-Aware};
+\draw[gray!30] (4.4-1.6,-0.25) -- (4.4+1.6,-0.25);
+\node[cdesc] at (4.4,-1.2)
+  {La misma energía emite distinto CO\textsubscript{2} según cuándo se consume.\\[4pt]
+   Ejecutar tareas cuando la red\\
+   eléctrica usa más\\
+   renovables.\\[4pt]
+   \textit{Reducir CI en la fórmula}\\
+   CO\textsubscript{2} = E $\times$ \textbf{CI}};
+
+%% ---- CARD 3: Hardware eficiente ----
+\node[card, fill=practica3!15, draw=practica3!70!black] (c3) at (8.8,0) {};
+
+% Device with long lifespan arrow
+\node[device] at (8.8, 1.6) {\tiny equipo};
+\draw[->, thick, practica3!60!black, rounded corners=4pt]
+  (8.8-0.7, 1.15) -- (8.8-0.7, 0.85) -- (8.8+0.7, 0.85) -- (8.8+0.7, 1.15);
+\node[font=\tiny, text=gray!60] at (8.8, 0.65) {vida útil extendida};
+
+\node[ctitle] at (8.8, 0.0) {Principio III\\Hardware eficiente};
+\draw[gray!30] (8.8-1.6,-0.25) -- (8.8+1.6,-0.25);
+\node[cdesc] at (8.8,-1.2)
+  {Fabricar un dispositivo emite más CO\textsubscript{2} que usarlo.\\[4pt]
+   Software ligero (menos RAM/CPU) prolonga la vida del hardware\\
+   y reduce el carbono\\
+   incorporado.\\[4pt]
+   \textit{Reducir M en SCI = (O+M)/R}};
+
 \end{tikzpicture}
-\caption{Principios de la Green Software Engineering y su aplicación en las prácticas de este TFM}
+\caption{Los tres principios de la Green Software Engineering: qué reduce cada uno y por qué}
 \label{fig:gse-principios}
 \end{figure}
 
 La GSE aplica cuatro principios rectores para reducir sistémicamente la huella de carbono:
+
 
 
 \textbf{Principio I — Eficiencia Energética}: Reducir la cantidad de energía que usa el software para ejecutar una función concreta \cite{junger2024potentials}. Se logra optimizando los recursos de cómputo (CPU, memoria, disco) y minimizando la transferencia de datos por la red. La energía no solo se consume al procesar: cada byte transmitido implica un gasto energético en la infraestructura de red \cite{verdecchia2021green}.
@@ -293,7 +330,7 @@ La tabla~\ref{tab:gse-principios} sintetiza los tres principios con mayor releva
 \label{tab:gse-principios}
 \end{table}
 
-La conexión entre el marco teórico y las prácticas es directa: \textbf{P0} introduce la magnitud del problema (la cadena código\,→\,CO\textsubscript{2} de la figura~\ref{fig:cadena-co2}); \textbf{P1} y \textbf{P3} entrenan el Principio\,I midiendo y optimizando algoritmos e E/S; \textbf{P2} lleva el Principio\,III al análisis de memoria de objetos; y \textbf{P4} cierra el ciclo aplicando el Principio\,II en un sistema real con datos de la red eléctrica.
+La conexión entre el marco teórico y las prácticas es directa: \textbf{P0} introduce la magnitud del problema; \textbf{P1} y \textbf{P3} entrenan el Principio\,I midiendo y optimizando algoritmos e E/S; \textbf{P2} lleva el Principio\,III al análisis de memoria de objetos; y \textbf{P4} cierra el ciclo aplicando el Principio\,II en un sistema real con datos de la red eléctrica.
 
 
 
