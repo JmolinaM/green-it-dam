@@ -129,7 +129,7 @@ El alumnado cuantifica la huella de carbono de distintas implementaciones algor�
 \subsubsection{Sesión 1 (50 min): \textit{¿Cómo puede un programa gastar CO$_2$?}}
 
 
-\textbf{Objetivo:} Construir el modelo mental de por qué el software tiene huella de carbono y verificarlo con datos reales.
+\textbf{Objetivo:} Construir el modelo mental de por qué el \textit{software} tiene huella de carbono y verificarlo con datos reales.
 
 
 \textbf{(15 min) Debate inicial} El docente lanza dos preguntas sin responder él mismo:
@@ -192,7 +192,7 @@ El código tiene tres ineficiencias deliberadas:
 \textbf{(20 min) Optimización guiada: tres rondas} El docente conduce el proceso paso a paso, señalando cada problema, explicando el mecanismo y pidiendo al alumno que aplique el cambio y mida. Tras cada ronda, el alumno calcula el \% de reducción y lo anota.
 
 
-\textbf{(10 min) Puesta en común y ranking} Cada alumno anota en la pizarra su \% de ahorro total. El ranking compara porcentajes de reducción (no valores absolutos, que dependen del hardware). Cuando toda la clase ve ahorros superiores al 99 \%, la norma social consolida que esa mejora es posible y esperable \cite{cialdini2001influence}.
+\textbf{(10 min) Puesta en común y ranking} Cada alumno anota en la pizarra su \% de ahorro total. El \textit{ranking} compara porcentajes de reducción (no valores absolutos, que dependen del \textit{hardware}). Cuando toda la clase ve ahorros superiores al 99 \%, la norma social consolida que esa mejora es posible y esperable \cite{cialdini2001influence}.
 
 
 \textbf{(5 min) Extrapolación y cierre} El alumnado calcula el ahorro diario multiplicando su reducción por 5 millones de ejecuciones, lo convierte a kg CO$_2$eq/día y lo traduce a una equivalencia de la Tabla 4.3.
@@ -251,14 +251,14 @@ Ahorro por ejecución (gCO$_2$eq): \_\_\_\_\_\_ Nº de ejecuciones/día: 5 000 0
   {Se ha analizado el impacto en el consumo de memoria de las decisiones de instanciación de objetos, cuantificando el coste de distintas arquitecturas de clases mediante medición de pico de memoria y crecimiento por instancia (\texttt{tracemalloc})}
   {ABP/PBL en equipos de 3 (roles rotativos: Portavoz / Programador/a / Analista de datos)}
   {3 sesiones $\times$ 50 min}
-  {P.III — Hardware eficiente · P.IV — Medición SCI}
+  {P.III — \textit{Hardware} eficiente · P.IV — Medición SCI}
   {Informe técnico + presentación de 5 min por equipo}
 
 
 \subsection{Objetivo}
 
 
-Como se introduce en el apartado~\ref{sec:carbono-incorporado} (\textit{carbono operacional vs.\ incorporado}), fabricar un dispositivo ya genera una \textbf{huella de carbono incorporada} que se diluye cuantos más años dura el equipo. Cuidar el hardware pasa, en gran medida, por un software que no lo fuerce más allá de sus límites: un programa con fugas de memoria obliga a reinicios frecuentes y acorta la vida útil del servidor.
+Como se introduce en el apartado~\ref{sec:carbono-incorporado} (\textit{carbono operacional vs.\ incorporado}), fabricar un dispositivo ya genera una \textbf{huella de carbono incorporada} que se diluye cuantos más años dura el equipo. Cuidar el \textit{hardware} pasa, en gran medida, por un \textit{software} que no lo fuerce más allá de sus límites: un programa con fugas de memoria obliga a reinicios frecuentes y acorta la vida útil del servidor.
 
 El alumnado diagnostica una fuga de memoria en un servidor Python real, aplica una refactorización orientada a objetos que la elimina y cuantifica el ahorro en RAM y CO$_2$eq, conectando la decisión de diseño de clases con su impacto ambiental.
 
@@ -349,13 +349,13 @@ Cada equipo elige su estrategia de refactorización:
 
 \begin{itemize}
 \item \textbf{Estrategia A:} Singleton para \texttt{ConfiguracionApp} + eliminar \texttt{dict(config.\_parametros)} del registro
-\item \textbf{Estrategia B:} \texttt{collections.deque(maxlen=X)} para \texttt{\_historial} (buffer circular)
+\item \textbf{Estrategia B:} \texttt{collections.deque(maxlen=X)} para \texttt{\_historial} (\textit{buffer} circular)
 \item \textbf{Estrategia C:} Eliminación del \texttt{\_registro\_config} completo
 \item \textbf{Estrategia D:} Combinación de varias
 \end{itemize}
 
 
-La tarjeta incluye: solución elegida / por qué resuelve el problema / trade-off asumido / métrica de éxito cuantificada.
+La tarjeta incluye: solución elegida / por qué resuelve el problema / \textit{trade-off} asumido / métrica de éxito cuantificada.
 
 
 \textbf{(5 min) Cierre}
@@ -378,7 +378,7 @@ Los equipos implementan la refactorización y ejecutan \texttt{stress\_test.py} 
 \textbf{(20 min) Ronda de presentaciones: ``El tribunal técnico''}
 
 
-Cada equipo presenta en \textbf{5 minutos exactos} con estructura obligatoria: (1) diagnóstico con dato, (2) solución y código refactorizado, (3) datos antes/después y extrapolación, (4) trade-off asumido. El docente anota la tabla comparativa en la pizarra.
+Cada equipo presenta en \textbf{5 minutos exactos} con estructura obligatoria: (1) diagnóstico con dato, (2) solución y código refactorizado, (3) datos antes/después y extrapolación, (4) \textit{trade-off} asumido. El docente anota la tabla comparativa en la pizarra.
 
 
 \textbf{(10 min) Debate sobre trade-offs}
@@ -417,17 +417,17 @@ Informe técnico por equipo (PDF o documento en plataforma):
 
 \fichapractica{P3}{Datos que cuestan energía}
   {RA5: Realiza operaciones de entrada y salida de información, utilizando procedimientos específicos del lenguaje y librerías de clases}
-  {Se ha comparado el consumo energético de diferentes estrategias de E/S (carga completa vs.\ streaming), seleccionando la más eficiente energéticamente}
+  {Se ha comparado el consumo energético de diferentes estrategias de E/S (carga completa vs.\ \textit{streaming}), seleccionando la más eficiente energéticamente}
   {ABP individual}
   {3 sesiones $\times$ 50 min}
-  {P.I — Eficiencia energética · P.II — Carbon-aware}
+  {P.I — Eficiencia energética · P.II — \textit{Carbon-aware}}
   {Script optimizado + informe con tabla de tres métricas, gráfico de consumo de memoria y justificación de la estrategia}
 
 
 \subsection{Objetivo}
 
 
-El alumnado evalúa y selecciona la estrategia de E/S más eficiente para procesar datasets de gran tamaño. El escenario: un sistema IoT con 50 sensores genera un CSV de más de un millón de filas; la carga completa con \texttt{pd.read\_csv()} agota la RAM del servidor. Al terminar, el alumno habrá demostrado con mediciones propias que la misma operación puede hacerse con un 90 \% menos de memoria, y habrá calculado el ahorro energético equivalente en un servidor cloud.
+El alumnado evalúa y selecciona la estrategia de E/S más eficiente para procesar \textit{datasets} de gran tamaño. El escenario: un sistema IoT con 50 sensores genera un CSV de más de un millón de filas; la carga completa con \texttt{pd.read\_csv()} agota la RAM del servidor. Al terminar, el alumno habrá demostrado con mediciones propias que la misma operación puede hacerse con un 90 \% menos de memoria, y habrá calculado el ahorro energético equivalente en un servidor \textit{cloud}.
 
 
 \subsubsection{Sesión 1 (50 min): La crisis de memoria}
@@ -447,7 +447,7 @@ El alumnado evalúa y selecciona la estrategia de E/S más eficiente para proces
 \textbf{(20 min) Fase 2: Observación Reflexiva (cierre)} El alumnado completa el gráfico de uso de memoria a lo largo del tiempo para cada estrategia (matplotlib o similar) y calcula el porcentaje de reducción de memoria pico.
 
 
-\textbf{(30 min) Fase 3: Conceptualización Abstracta} El alumnado formaliza: (a) la diferencia entre carga completa y streaming como $O(n)$ vs. $O(k)$, donde k es el tamaño del chunk; (b) por qué el streaming es el estándar en sistemas de grandes datos; (c) la relación entre consumo de RAM y coste energético en servidores cloud (precio por GB·hora en AWS/Azure).
+\textbf{(30 min) Fase 3: Conceptualización Abstracta} El alumnado formaliza: (a) la diferencia entre carga completa y \textit{streaming} como $O(n)$ vs. $O(k)$, donde k es el tamaño del \textit{chunk}; (b) por qué el \textit{streaming} es el estándar en sistemas de grandes datos; (c) la relación entre consumo de RAM y coste energético en servidores \textit{cloud} (precio por GB·hora en AWS/Azure).
 
 
 
@@ -455,7 +455,7 @@ El alumnado evalúa y selecciona la estrategia de E/S más eficiente para proces
 \subsubsection{Sesión 3 (50 min): Extender y redactar}
 
 
-\textbf{(50 min) Fase 4: Experimentación Activa} El alumnado extiende la solución de streaming para calcular en un único paso cuatro estadísticas (media, desviación típica, mínimo y máximo). Opcionalmente explora la lectura del CSV comprimido con gzip. Redacta el informe comparando las tres variantes: carga completa, streaming y streaming con compresión.
+\textbf{(50 min) Fase 4: Experimentación Activa} El alumnado extiende la solución de \textit{streaming} para calcular en un único paso cuatro estadísticas (media, desviación típica, mínimo y máximo). Opcionalmente explora la lectura del CSV comprimido con gzip. Redacta el informe comparando las tres variantes: carga completa, \textit{streaming} y \textit{streaming} con compresión.
 
 
 \textit{Véase Anexo C: código en GitHub en \texttt{practicas/p3\_optimizar/}.}
@@ -475,7 +475,7 @@ El alumnado evalúa y selecciona la estrategia de E/S más eficiente para proces
   {Se ha implementado una estrategia de planificación temporal de tareas considerando la intensidad de carbono de la red eléctrica}
   {ABP en grupos de 3}
   {4 sesiones $\times$ 50 min}
-  {P.I — Eficiencia energética · P.II — Carbon-aware · P.III — Hardware eficiente · P.IV — Medición SCI}
+  {P.I — Eficiencia energética · P.II — \textit{Carbon-aware} · P.III — \textit{Hardware} eficiente · P.IV — Medición SCI}
   {Cola verde funcional + tests + informe con cálculo de emisiones evitadas y pitch de 5 min}
 
 
@@ -545,13 +545,13 @@ La puesta en práctica de la propuesta requiere herramientas de libre acceso, co
   & \texttt{cProfile} (stdlib Python)
   & Identificar cuellos de botella en tiempo de CPU (P1) \\
   & \texttt{pandas}
-  & Procesado de datos en streaming vs.\ carga completa (P3) \\
+  & Procesado de datos en \textit{streaming} vs.\ carga completa (P3) \\
 \midrule
 \multirow{2}{*}{Pruebas}
   & \texttt{pytest} \newline \texttt{pip install pytest}
   & Tests unitarios y de integración de la ColaVerde (P4) \\
   & \texttt{heapq} (stdlib Python)
-  & Implementación de la cola de prioridad carbon-aware (P4) \\
+  & Implementación de la cola de prioridad \textit{carbon-aware} (P4) \\
 \midrule
 \multirow{3}{*}{Recursos web}
   & IEA — \url{iea.org/data-and-statistics}
@@ -570,7 +570,7 @@ Entorno de desarrollo
 \end{tabular}
 \end{table}
 
-Todas las herramientas son \textbf{gratuitas y de código abierto} (o de acceso público), no requieren licencia ni instalación de infraestructura adicional, y pueden usarse desde cualquier equipo con conexión a internet. Los recursos web de P0 funcionan sin instalación de software, lo que facilita su uso en el aula desde el primer día.
+Todas las herramientas son \textbf{gratuitas y de código abierto} (o de acceso público), no requieren licencia ni instalación de infraestructura adicional, y pueden usarse desde cualquier equipo con conexión a internet. Los recursos web de P0 funcionan sin instalación de \textit{software}, lo que facilita su uso en el aula desde el primer día.
 
 
 
