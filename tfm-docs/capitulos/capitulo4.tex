@@ -88,35 +88,27 @@ P0 construye el marco afectivo que da sentido a P1–P4. El alumnado investiga e
 
 \subsection{Tabla de equivalencias de CO$_2$}
 
-
-
 \begin{table}[H]
 \centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{Cantidad CO$_2$eq} & \textbf{Equivale a…} \\
-\hline
-1 g CO$_2$eq & 2 búsquedas en Google · 4 mensajes de WhatsApp · 30 s de \textit{streaming} en HD \\
-\hline
-10 g CO$_2$eq & 1 min de videollamada en HD · 1 min de TikTok \\
-\hline
-100 g CO$_2$eq & 1 km en coche · 1 taza de café · 1 h de \textit{streaming} en HD \\
-\hline
-1 kg CO$_2$eq & 8 km en coche · cargar un smartphone \textasciitilde{}1.000 veces \\
-\hline
-10 kg CO$_2$eq & Madrid-Barcelona en AVE · vuelo doméstico de 1 h \\
-\hline
-100 kg CO$_2$eq & Madrid-Londres en avión · 800 km en coche \\
-\hline
-1 t CO$_2$eq & Madrid-Nueva York en avión (solo ida) · un español promedio durante 3 semanas \\
-\hline
-552 t CO$_2$eq & Entrenar GPT-3 \cite{strubell2019energy} \\
-\hline
+\small
+\newcolumntype{M}[1]{>{\centering\arraybackslash}p{#1}}
+\begin{tabular}{M{2.8cm} p{10cm}}
+\toprule
+\textbf{Cantidad CO$_2$eq} & \textbf{Equivale a\ldots} \\
+\midrule
+\cellcolor{green!25}\textbf{1 g}   & 2 búsquedas en Google · 4 mensajes de WhatsApp · 30 s de \textit{streaming} HD \\[3pt]
+\cellcolor{green!40}\textbf{10 g}  & 1 min de videollamada HD · 1 min de TikTok \\[3pt]
+\cellcolor{yellow!50}\textbf{100 g} & 1 km en coche · 1 taza de café · 1 h de \textit{streaming} HD \\[3pt]
+\cellcolor{orange!40}\textbf{1 kg}  & 8 km en coche · cargar un smartphone $\approx$1.000 veces \\[3pt]
+\cellcolor{orange!65}\textbf{10 kg} & Madrid--Barcelona en AVE · vuelo doméstico de 1 h \\[3pt]
+\cellcolor{red!30}\textbf{100 kg}  & Madrid--Londres en avión · 800 km en coche \\[3pt]
+\cellcolor{red!50}\textbf{1 t}     & Madrid--Nueva York (solo ida) · un español promedio durante 3 semanas \\[3pt]
+\cellcolor{red!70}\textbf{\color{white}552 t}   & \textbf{Entrenar GPT-3}~\cite{strubell2019energy} \\
+\bottomrule
 \end{tabular}
 \caption{Equivalencias de referencia para la interpretación de datos de emisiones}
 \label{tab:equivalencias-de-referencia-para-la-interpretacion}
 \end{table}
-
 
 \textit{Fuentes: Google~\cite{google2022environmental}; The Shift Project~\cite{shiftproject2019lean}; ADEME~\cite{ademe2022face}; IEA~\cite{iea2024energy}; Strubell et al.~\cite{strubell2019energy}.}
 
