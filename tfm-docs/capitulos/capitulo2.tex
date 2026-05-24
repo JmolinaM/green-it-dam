@@ -198,7 +198,47 @@ El marco conceptual de la GSE se articula en torno a la fórmula fundamental de 
 \textbf{Emisión de Carbono (C) = Energía Consumida (E) $\times$ Intensidad de Carbono (CI)}
 
 
-Un software sostenible debe impactar positivamente en ambos factores (E y CI), además de considerar las emisiones asociadas al hardware que lo soporta. La GSE aplica cuatro principios rectores para reducir sistémicamente la huella de carbono:
+Un software sostenible debe impactar positivamente en ambos factores (E y CI), además de considerar las emisiones asociadas al hardware que lo soporta. La figura~\ref{fig:cadena-co2} muestra la cadena causal y los puntos de intervención de la GSE:
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  node distance=1.6cm and 2.0cm,
+  box/.style={rectangle, rounded corners=5pt, draw=green!50!black,
+              fill=green!8, text width=2.0cm, align=center,
+              font=\small\bfseries, minimum height=1.1cm},
+  gbox/.style={rectangle, rounded corners=3pt, draw=gray!50,
+               fill=gray!7, text width=2.2cm, align=center,
+               font=\footnotesize\itshape, minimum height=0.9cm},
+  arr/.style={-{Stealth}, thick, green!50!black},
+  darr/.style={-{Stealth}, dashed, gray!60}
+]
+  % Main chain
+  \node[box] (code)   {Código\\ejecutado};
+  \node[box, right=of code]   (cpu)    {CPU · Mem.\\E/S · Red};
+  \node[box, right=of cpu]    (energy) {Energía\\consumida (E)};
+  \node[box, right=of energy] (co2)    {CO\textsubscript{2}\\emitido};
+
+  \draw[arr] (code)   -- (cpu);
+  \draw[arr] (cpu)    -- (energy);
+  \draw[arr] (energy) -- (co2) node[midway, above, font=\footnotesize, black] {$\times$ CI};
+
+  % GSE principles below
+  \node[gbox, below=1.0cm of code]   (p1a) {P.\,I\\Algoritmos eficientes};
+  \node[gbox, below=1.0cm of cpu]    (p1b) {P.\,I\\Memoria · E/S};
+  \node[gbox, below=1.0cm of energy] (p2)  {P.\,II\\Carbon-Aware};
+  \node[gbox, below=1.0cm of co2]    (p3)  {P.\,III\\Hardware eficiente};
+
+  \draw[darr] (p1a.north) -- (code.south);
+  \draw[darr] (p1b.north) -- (cpu.south);
+  \draw[darr] (p2.north)  -- (energy.south);
+  \draw[darr] (p3.north)  -- (co2.south);
+\end{tikzpicture}
+\caption{Cadena causal código\,→\,CO\textsubscript{2} y puntos de intervención de los principios GSE}
+\label{fig:cadena-co2}
+\end{figure}
+
+La GSE aplica cuatro principios rectores para reducir sistémicamente la huella de carbono:
 
 
 \textbf{Principio I — Eficiencia Energética}: Reducir la cantidad de energía que usa el software para ejecutar una función concreta \cite{junger2024potentials}. Se logra optimizando los recursos de cómputo (CPU, memoria, disco) y minimizando la transferencia de datos por la red. La energía no solo se consume al procesar: cada byte transmitido implica un gasto energético en la infraestructura de red \cite{verdecchia2021green}.
@@ -219,25 +259,35 @@ Un software sostenible debe impactar positivamente en ambos factores (E y CI), a
 Donde O son las emisiones operacionales (E $\times$ CI), M son las emisiones incorporadas del hardware, y R es la unidad funcional de referencia que normaliza el resultado (por ejemplo, por cada mil transacciones, por usuario activo o por tarea completada). Un aspecto crucial es que la puntuación SCI solo puede reducirse mediante la eliminación física de emisiones —mayor eficiencia, uso de energía más limpia—, excluyendo explícitamente las compensaciones de carbono (\textit{offsets}).
 
 
-La tabla siguiente sintetiza los tres primeros principios con mayor relevancia para la formación en el ciclo de DAM:
+La tabla~\ref{tab:gse-principios} sintetiza los tres principios con mayor relevancia para la formación en el ciclo de DAM y su aplicación directa en este TFM:
 
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
-\begin{tabularx}{\textwidth}{|X|X|X|}
-\hline
-\textbf{\textbf{Principio GSE}} & \textbf{\textbf{Qué significa}} & \textbf{\textbf{Cómo se trabaja en las prácticas}} \\
-\hline
-\textbf{Eficiencia energética} & Hacer el mismo trabajo computacional consumiendo menos energía, mediante la optimización de algoritmos, estructuras de datos y patrones de diseño & Medición comparativa de algoritmos equivalentes con CodeCarbon; rúbrica con criterio de reducción porcentual de emisiones \\
-\hline
-\textbf{Carbon-Aware Computing} & Adaptar la ejecución de tareas al momento del día o la región geográfica en que la red eléctrica tiene mayor proporción de energía renovable & Introducción conceptual en P4; análisis de datos de intensidad de carbono de la red eléctrica (API Carbon Intensity) \\
-\hline
-\textbf{Eficiencia de hardware} & Minimizar los recursos de hardware necesarios (CPU, memoria) para prolongar la vida útil del dispositivo y reducir el carbono incorporado & Perfilado de consumo de recursos; relación entre complejidad algorítmica $O(n)$ y consumo de hardware \\
-\hline
-\end{tabularx}
-\caption{Green Software Engineering: principios y métricas}
-\label{tab:green-software-engineering-principios-y-metricas}
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{} p{3.2cm} p{5.0cm} p{4.8cm} @{}}
+\toprule
+\textbf{Principio GSE} & \textbf{Qué significa} & \textbf{Cómo se trabaja en las prácticas} \\
+\midrule
+\textbf{I — Eficiencia energética} &
+  Hacer el mismo trabajo computacional consumiendo menos energía, optimizando algoritmos, memoria y transferencia de datos &
+  \textbf{P1}: comparativa de algoritmos con CodeCarbon · \textbf{P3}: streaming vs.\ carga completa \\
+\addlinespace
+\textbf{II — Carbon-Aware} &
+  Adaptar la ejecución al momento o región con mayor proporción de energía renovable en la red &
+  \textbf{P4}: cola de tareas con Electricity Maps API \\
+\addlinespace
+\textbf{III — Hardware eficiente} &
+  Minimizar los recursos de hardware necesarios para prolongar la vida útil del dispositivo &
+  \textbf{P2}: perfilado de memoria con \texttt{tracemalloc}; relación $O(n)$\,→\,consumo \\
+\bottomrule
+\end{tabular}
+\caption{Principios GSE y su aplicación en las prácticas de este TFM}
+\label{tab:gse-principios}
 \end{table}
+
+La conexión entre el marco teórico y las prácticas es directa: \textbf{P0} introduce la magnitud del problema (la cadena código\,→\,CO\textsubscript{2} de la figura~\ref{fig:cadena-co2}); \textbf{P1} y \textbf{P3} entrenan el Principio\,I midiendo y optimizando algoritmos e E/S; \textbf{P2} lleva el Principio\,III al análisis de memoria de objetos; y \textbf{P4} cierra el ciclo aplicando el Principio\,II en un sistema real con datos de la red eléctrica.
 
 
 
