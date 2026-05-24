@@ -9,104 +9,60 @@ La propuesta integra cinco prácticas de laboratorio en el módulo MP0485 (CFGS 
 
 \begin{figure}[htbp]
 \centering
-\begin{tcbraster}[
-  raster columns=5,
-  raster equal height,
-  raster column skip=0.25cm,
-  raster width=\textwidth,
-  enhanced,
-  fonttitle=\small\bfseries,
-  coltitle=white,
-  boxrule=0.6pt,
-  top=5pt, bottom=5pt, left=5pt, right=5pt
+\begin{tikzpicture}[
+  pbox/.style={rectangle, rounded corners=6pt, text width=2.3cm,
+               minimum height=3.8cm, align=center,
+               font=\footnotesize, draw=#1!70!black, fill=#1!15},
+  arr/.style={-{Stealth[length=7pt,width=6pt]}, line width=1.5pt, gray!60}
 ]
-% P0
-\begin{tcolorbox}[
-  title={P0},
-  colbacktitle=practica0!80!black,
-  colframe=practica0!70!black,
-  colback=practica0!10
-]
-  \centering
-  \small\textbf{Concienciar}\\[4pt]
-  \footnotesize\textit{¿Cuánto contamina tu código?}\\[6pt]
-  \begin{tabular}{@{}l@{\ }l@{}}
-    \tiny RA: & \tiny Prev. RA1 \\
-    \tiny Mét.: & \tiny Jigsaw \\
-    \tiny GSE: & \tiny Magnitud \\
-    \tiny Ses.: & \tiny 2 \\
-  \end{tabular}
-\end{tcolorbox}
-% P1
-\begin{tcolorbox}[
-  title={P1},
-  colbacktitle=practica1!75!black,
-  colframe=practica1!65!black,
-  colback=practica1!15
-]
-  \centering
-  \small\textbf{Medir}\\[4pt]
-  \footnotesize\textit{¿Cuánto pesa tu algoritmo?}\\[6pt]
-  \begin{tabular}{@{}l@{\ }l@{}}
-    \tiny RA: & \tiny RA3 \\
-    \tiny Mét.: & \tiny ABP individual \\
-    \tiny GSE: & \tiny P.\,I \\
-    \tiny Ses.: & \tiny 2 \\
-  \end{tabular}
-\end{tcolorbox}
-% P2
-\begin{tcolorbox}[
-  title={P2},
-  colbacktitle=practica2!75!black,
-  colframe=practica2!65!black,
-  colback=practica2!15
-]
-  \centering
-  \small\textbf{Analizar}\\[4pt]
-  \footnotesize\textit{El servidor que no para de crecer}\\[6pt]
-  \begin{tabular}{@{}l@{\ }l@{}}
-    \tiny RA: & \tiny RA4 \\
-    \tiny Mét.: & \tiny ABP grupal \\
-    \tiny GSE: & \tiny P.\,III \\
-    \tiny Ses.: & \tiny 3 \\
-  \end{tabular}
-\end{tcolorbox}
-% P3
-\begin{tcolorbox}[
-  title={P3},
-  colbacktitle=practica3!75!black,
-  colframe=practica3!65!black,
-  colback=practica3!15
-]
-  \centering
-  \small\textbf{Optimizar}\\[4pt]
-  \footnotesize\textit{Datos que cuestan energía}\\[6pt]
-  \begin{tabular}{@{}l@{\ }l@{}}
-    \tiny RA: & \tiny RA5 \\
-    \tiny Mét.: & \tiny ABP individual \\
-    \tiny GSE: & \tiny P.\,I \\
-    \tiny Ses.: & \tiny 3 \\
-  \end{tabular}
-\end{tcolorbox}
-% P4
-\begin{tcolorbox}[
-  title={P4},
-  colbacktitle=practica4!75!black,
-  colframe=practica4!65!black,
-  colback=practica4!15
-]
-  \centering
-  \small\textbf{Actuar}\\[4pt]
-  \footnotesize\textit{La cola verde}\\[6pt]
-  \begin{tabular}{@{}l@{\ }l@{}}
-    \tiny RA: & \tiny RA9 \\
-    \tiny Mét.: & \tiny ABP grupal \\
-    \tiny GSE: & \tiny P.\,II \\
-    \tiny Ses.: & \tiny 4 \\
-  \end{tabular}
-\end{tcolorbox}
-\end{tcbraster}
-\caption*{\footnotesize\textit{Secuencia P0--P4: 14 sesiones (11,7\,h) en MP0485 Programación, CFGS DAM 1.º curso. GSE: principio de Green Software Engineering trabajado.}}
+% --- 5 practice nodes ---
+\node[pbox=practica0] (p0) at (0,0) {
+  \textbf{\normalsize P0}\\[3pt]
+  \textsc{Concienciar}\\[5pt]
+  \textit{¿Cuánto contamina tu código?}\\[5pt]
+  RA: Prev.\,RA1\\
+  GSE: Magnitud\\
+  2 sesiones
+};
+\node[pbox=practica1] (p1) at (3.0,0) {
+  \textbf{\normalsize P1}\\[3pt]
+  \textsc{Medir}\\[5pt]
+  \textit{¿Cuánto pesa tu algoritmo?}\\[5pt]
+  RA: RA3\\
+  GSE: P.\,I\\
+  2 sesiones
+};
+\node[pbox=practica2] (p2) at (6.0,0) {
+  \textbf{\normalsize P2}\\[3pt]
+  \textsc{Analizar}\\[5pt]
+  \textit{El servidor que no para de crecer}\\[5pt]
+  RA: RA4\\
+  GSE: P.\,III\\
+  3 sesiones
+};
+\node[pbox=practica3] (p3) at (9.0,0) {
+  \textbf{\normalsize P3}\\[3pt]
+  \textsc{Optimizar}\\[5pt]
+  \textit{Datos que cuestan energía}\\[5pt]
+  RA: RA5\\
+  GSE: P.\,I\\
+  3 sesiones
+};
+\node[pbox=practica4] (p4) at (12.0,0) {
+  \textbf{\normalsize P4}\\[3pt]
+  \textsc{Actuar}\\[5pt]
+  \textit{La cola verde}\\[5pt]
+  RA: RA9\\
+  GSE: P.\,II\\
+  4 sesiones
+};
+% --- arrows ---
+\draw[arr] (p0.east) -- (p1.west);
+\draw[arr] (p1.east) -- (p2.west);
+\draw[arr] (p2.east) -- (p3.west);
+\draw[arr] (p3.east) -- (p4.west);
+\end{tikzpicture}
+\caption{Secuencia de prácticas Green IT en MP0485 Programación (CFGS DAM, 1.\textordmasculine\ curso) --- 14 sesiones en total}
 \label{fig:secuencia-practicas}
 \end{figure}
 
