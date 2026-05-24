@@ -316,34 +316,6 @@ La GSE aplica cuatro principios rectores para reducir sistémicamente la huella 
 Donde O son las emisiones operacionales (E $\times$ CI), M son las emisiones incorporadas del hardware, y R es la unidad funcional de referencia que normaliza el resultado (por ejemplo, por cada mil transacciones, por usuario activo o por tarea completada). Un aspecto crucial es que la puntuación SCI solo puede reducirse mediante la eliminación física de emisiones —mayor eficiencia, uso de energía más limpia—, excluyendo explícitamente las compensaciones de carbono (\textit{offsets}).
 
 
-La tabla~\ref{tab:gse-principios} sintetiza los tres principios con mayor relevancia para la formación en el ciclo de DAM y su aplicación directa en este TFM:
-
-
-\begin{table}[htbp]
-\centering
-\small
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{@{} p{3.2cm} p{5.0cm} p{4.8cm} @{}}
-\toprule
-\textbf{Principio GSE} & \textbf{Qué significa} & \textbf{Cómo se trabaja en las prácticas} \\
-\midrule
-\textbf{I — Eficiencia energética} &
-  Hacer el mismo trabajo computacional consumiendo menos energía, optimizando algoritmos, memoria y transferencia de datos &
-  \textbf{P1}: comparativa de algoritmos con CodeCarbon · \textbf{P3}: streaming vs.\ carga completa \\
-\addlinespace
-\textbf{II — Carbon-Aware} &
-  Adaptar la ejecución al momento o región con mayor proporción de energía renovable en la red &
-  \textbf{P4}: cola de tareas con Electricity Maps API \\
-\addlinespace
-\textbf{III — Hardware eficiente} &
-  Minimizar los recursos de hardware necesarios para prolongar la vida útil del dispositivo &
-  \textbf{P2}: perfilado de memoria con \texttt{tracemalloc}; relación $O(n)$\,→\,consumo \\
-\bottomrule
-\end{tabular}
-\caption{Principios GSE y su aplicación en las prácticas de este TFM}
-\label{tab:gse-principios}
-\end{table}
-
 La conexión entre el marco teórico y las prácticas es directa: \textbf{P0} introduce la magnitud del problema; \textbf{P1} y \textbf{P3} entrenan el Principio\,I midiendo y optimizando algoritmos e E/S; \textbf{P2} lleva el Principio\,III al análisis de memoria de objetos; y \textbf{P4} cierra el ciclo aplicando el Principio\,II en un sistema real con datos de la red eléctrica.
 
 
