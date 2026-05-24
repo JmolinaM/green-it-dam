@@ -9,59 +9,7 @@ La propuesta integra cinco prácticas de laboratorio en el módulo MP0485 (CFGS 
 
 \begin{figure}[htbp]
 \centering
-\begin{tikzpicture}[
-  pbox/.style={rectangle, rounded corners=6pt, text width=2.3cm,
-               minimum height=3.8cm, align=center,
-               font=\footnotesize, draw=#1!70!black, fill=#1!15},
-  arr/.style={-{Stealth[length=7pt,width=6pt]}, line width=1.5pt, gray!60}
-]
-% --- 5 practice nodes ---
-\node[pbox=practica0] (p0) at (0,0) {
-  \textbf{\normalsize P0}\\[3pt]
-  \textsc{Concienciar}\\[5pt]
-  \textit{¿Cuánto contamina tu código?}\\[5pt]
-  RA: Prev.\,RA1\\
-  GSE: Magnitud\\
-  2 sesiones
-};
-\node[pbox=practica1] (p1) at (3.0,0) {
-  \textbf{\normalsize P1}\\[3pt]
-  \textsc{Medir}\\[5pt]
-  \textit{¿Cuánto pesa tu algoritmo?}\\[5pt]
-  RA: RA3\\
-  GSE: P.\,I\\
-  2 sesiones
-};
-\node[pbox=practica2] (p2) at (6.0,0) {
-  \textbf{\normalsize P2}\\[3pt]
-  \textsc{Analizar}\\[5pt]
-  \textit{El servidor que no para de crecer}\\[5pt]
-  RA: RA4\\
-  GSE: P.\,III\\
-  3 sesiones
-};
-\node[pbox=practica3] (p3) at (9.0,0) {
-  \textbf{\normalsize P3}\\[3pt]
-  \textsc{Optimizar}\\[5pt]
-  \textit{Datos que cuestan energía}\\[5pt]
-  RA: RA5\\
-  GSE: P.\,I\\
-  3 sesiones
-};
-\node[pbox=practica4] (p4) at (12.0,0) {
-  \textbf{\normalsize P4}\\[3pt]
-  \textsc{Actuar}\\[5pt]
-  \textit{La cola verde}\\[5pt]
-  RA: RA9\\
-  GSE: P.\,II\\
-  4 sesiones
-};
-% --- arrows ---
-\draw[arr] (p0.east) -- (p1.west);
-\draw[arr] (p1.east) -- (p2.west);
-\draw[arr] (p2.east) -- (p3.west);
-\draw[arr] (p3.east) -- (p4.west);
-\end{tikzpicture}
+\includegraphics[width=\textwidth]{figs/secuencia-practicas.png}
 \caption{Secuencia de prácticas Green IT en MP0485 Programación (CFGS DAM, 1.\textordmasculine\ curso) --- 14 sesiones en total}
 \label{fig:secuencia-practicas}
 \end{figure}

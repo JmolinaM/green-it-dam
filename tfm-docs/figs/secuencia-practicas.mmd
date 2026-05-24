@@ -1,0 +1,22 @@
+%%{init: {'theme': 'base', 'themeVariables': {
+  'primaryColor': '#e8f5e9',
+  'primaryBorderColor': '#2e7d32',
+  'primaryTextColor': '#1b5e20',
+  'lineColor': '#78909c',
+  'fontFamily': 'Arial, sans-serif',
+  'fontSize': '14px'
+}}}%%
+flowchart LR
+  P0["P0 · Concienciar\n¿Cuánto contamina tu código?\nRA: Prev. RA1 — GSE: Magnitud\n2 sesiones"]
+  P1["P1 · Medir\n¿Cuánto pesa tu algoritmo?\nRA: RA3 — GSE: P. I\n2 sesiones"]
+  P2["P2 · Analizar\nEl servidor que no para de crecer\nRA: RA4 — GSE: P. III\n3 sesiones"]
+  P3["P3 · Optimizar\nDatos que cuestan energía\nRA: RA5 — GSE: P. I\n3 sesiones"]
+  P4["P4 · Actuar\nLa cola verde\nRA: RA9 — GSE: P. II\n4 sesiones"]
+
+  P0 --> P1 --> P2 --> P3 --> P4
+
+  style P0 fill:#AED6F1,stroke:#1a6a9a,color:#0d3a55
+  style P1 fill:#ABEBC6,stroke:#1e7e45,color:#0d3a1f
+  style P2 fill:#82E0AA,stroke:#1e7e45,color:#0d3a1f
+  style P3 fill:#F9E79F,stroke:#b7860b,color:#5a3e00
+  style P4 fill:#52BE80,stroke:#1a6b3a,color:#0d3a1f
