@@ -30,7 +30,7 @@ La propuesta integra cinco prácticas de laboratorio en el módulo MP0485 (CFGS 
   {El alumnado identifica el impacto ambiental del sector TIC y lo cuantifica mediante datos propios de consumo digital}
   {Jigsaw \cite{aronson2011cooperation} + cálculo personal de huella digital}
   {2 sesiones $\times$ 50 min}
-  {Sin instalación de software (IEA, Electricity Maps, Website Carbon Calculator, PNAV), papel y calculadora}
+  {P.IV — Medición SCI}
   {Ficha B de síntesis grupal + Ficha C individual con cálculo de huella}
 
 
@@ -114,7 +114,7 @@ P0 construye el marco afectivo que da sentido a P1–P4. El alumnado investiga e
   {Se ha medido y comparado el consumo energético de diferentes implementaciones de una misma función, seleccionando la de menor huella de carbono}
   {ABP individual}
   {2 sesiones $\times$ 50 min}
-  {CodeCarbon (\texttt{pip install codecarbon}), cProfile (stdlib), Python 3.10+, VS Code}
+  {P.I — Eficiencia energética · P.IV — Medición SCI}
   {Ficha P1: tabla de mediciones (código original + 3 mejoras) + extrapolación a escala de producción + reflexión breve}
 
 
@@ -245,7 +245,7 @@ Ahorro por ejecución (gCO$_2$eq): \_\_\_\_\_\_ Nº de ejecuciones/día: 5 000 0
   {Se ha analizado el impacto en el consumo de memoria de las decisiones de instanciación de objetos, cuantificando con tracemalloc el coste de distintas arquitecturas de clases}
   {ABP/PBL en equipos de 3 (roles rotativos: Portavoz / Programador/a / Auditor/a)}
   {3 sesiones $\times$ 50 min}
-  {\texttt{tracemalloc} (stdlib), modelo CO$_2$ manual, VS Code}
+  {P.III — Hardware eficiente · P.IV — Medición SCI}
   {Informe técnico + presentación de 5 min por equipo}
 
 
@@ -393,7 +393,7 @@ Informe técnico por equipo (PDF o documento en plataforma):
   {Se ha comparado el consumo energético de diferentes estrategias de E/S (carga completa vs.\ streaming), seleccionando la más eficiente energéticamente}
   {ABP individual}
   {3 sesiones $\times$ 50 min}
-  {CodeCarbon, tracemalloc (stdlib), pandas, Python 3.10+, VS Code}
+  {P.I — Eficiencia energética · P.II — Carbon-aware}
   {Script optimizado + informe con tabla de tres métricas, gráfico de consumo de memoria y justificación de la estrategia}
 
 
@@ -448,7 +448,7 @@ El alumnado evalúa y selecciona la estrategia de E/S más eficiente para proces
   {Se ha implementado una estrategia de planificación temporal de tareas considerando la intensidad de carbono de la red eléctrica}
   {ABP en grupos de 3}
   {4 sesiones $\times$ 50 min}
-  {CodeCarbon, Electricity Maps API (CSV simulado), Python 3.10+, VS Code, pytest}
+  {P.I — Eficiencia energética · P.II — Carbon-aware · P.III — Hardware eficiente · P.IV — Medición SCI}
   {Cola verde funcional + tests + informe con cálculo de emisiones evitadas y pitch de 5 min}
 
 
@@ -492,6 +492,58 @@ El alumnado implementa una cola de tareas \textit{carbon-aware}: un sistema que 
 
 
 \textit{Véase Anexo C: código en GitHub en \texttt{practicas/p4\_actuar/}.}
+
+
+\section{Recursos y herramientas}
+\label{sec:herramientas}
+
+La puesta en práctica de la propuesta requiere herramientas de libre acceso, compatibles con el entorno habitual de los módulos de DAM (Python 3.10+, VS Code). La Tabla~\ref{tab:herramientas} resume los recursos agrupados por tipo.
+
+\begin{table}[H]
+\centering
+\caption{Herramientas y recursos necesarios para las prácticas P0–P4}
+\label{tab:herramientas}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{3cm}p{4.5cm}p{6.5cm}@{}}
+\toprule
+\textbf{Tipo} & \textbf{Herramienta / Recurso} & \textbf{Uso en la propuesta} \\
+\midrule
+\multirow{2}{*}{Medición CO$_2$}
+  & CodeCarbon \newline \texttt{pip install codecarbon}
+  & Medir emisiones de carbono del código Python (P1, P3, P4) \\
+  & \texttt{tracemalloc} (stdlib Python)
+  & Perfilado de memoria RAM en tiempo de ejecución (P2, P3) \\
+\midrule
+\multirow{2}{*}{Análisis de rendimiento}
+  & \texttt{cProfile} (stdlib Python)
+  & Identificar cuellos de botella en tiempo de CPU (P1) \\
+  & \texttt{pandas}
+  & Procesado de datos en streaming vs.\ carga completa (P3) \\
+\midrule
+\multirow{2}{*}{Pruebas}
+  & \texttt{pytest} \newline \texttt{pip install pytest}
+  & Tests unitarios y de integración de la ColaVerde (P4) \\
+  & \texttt{heapq} (stdlib Python)
+  & Implementación de la cola de prioridad carbon-aware (P4) \\
+\midrule
+\multirow{3}{*}{Recursos web}
+  & IEA — \url{iea.org/data-and-statistics}
+  & Datos globales de consumo energético TIC (P0) \\
+  & Electricity Maps — \url{electricitymaps.com}
+  & Intensidad de carbono de la red eléctrica en tiempo real (P0, P4) \\
+  & Website Carbon Calculator \newline \url{websitecarbon.com}
+  & Huella de carbono de páginas web (P0) \\
+  & PNAV — \url{pnavmeter.com}
+  & Estimación de huella de datos móviles (P0) \\
+\midrule
+Entorno de desarrollo
+  & Python 3.10+ + VS Code
+  & Entorno de desarrollo habitual del módulo MP0485 (P1–P4) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Todas las herramientas son \textbf{gratuitas y de código abierto} (o de acceso público), no requieren licencia ni instalación de infraestructura adicional, y pueden usarse desde cualquier equipo con conexión a internet. Los recursos web de P0 funcionan sin instalación de software, lo que facilita su uso en el aula desde el primer día.
 
 
 
