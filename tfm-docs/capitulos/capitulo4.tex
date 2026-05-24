@@ -7,71 +7,26 @@ La propuesta integra cinco prácticas de laboratorio en el módulo MP0485 (CFGS 
 
 
 
-
-\begin{figure}[htbp]
+\begin{table}[H]
 \centering
-\begin{tikzpicture}[
-  node distance=0mm,
-  every node/.style={font=\small},
-  dot/.style={circle, fill=green!50!black, minimum size=10pt, inner sep=0pt},
-  label/.style={rectangle, rounded corners=3pt, fill=green!15, draw=green!50!black,
-                text width=4.2cm, align=left, inner sep=5pt, font=\small},
-  meta/.style={text width=5.8cm, align=left, font=\footnotesize, text=black!70}
-]
-
-% Línea vertical central
-\draw[line width=1.5pt, green!50!black] (0,0) -- (0,-14);
-
-% P0
-\node[dot] (d0) at (0, 0) {};
-\node[label, right=8mm of d0] (l0) {%
-  \textbf{P0} — \textit{¿Cuánto contamina tu código?}};
-\node[meta, right=8mm of l0.north east, anchor=north west] at (l0.north east) {};
-\node[meta, left=8mm of d0, anchor=east, text width=4cm, align=right] {
-  Prev.\ RA1 · Jigsaw\\2 sesiones · Web (IEA)};
-
-% P1
-\node[dot] (d1) at (0,-3.5) {};
-\node[label, right=8mm of d1] (l1) {%
-  \textbf{P1} — \textit{¿Cuánto pesa tu algoritmo?}};
-\node[meta, left=8mm of d1, anchor=east, text width=4cm, align=right] {
-  RA3 · ABP individual\\2 sesiones · CodeCarbon};
-
-% P2
-\node[dot] (d2) at (0,-7) {};
-\node[label, right=8mm of d2] (l2) {%
-  \textbf{P2} — \textit{El servidor que no para de crecer}};
-\node[meta, left=8mm of d2, anchor=east, text width=4cm, align=right] {
-  RA4 · ABP grupos de 3\\3 sesiones · tracemalloc};
-
-% P3
-\node[dot] (d3) at (0,-10.5) {};
-\node[label, right=8mm of d3] (l3) {%
-  \textbf{P3} — \textit{Datos que cuestan energía}};
-\node[meta, left=8mm of d3, anchor=east, text width=4cm, align=right] {
-  RA5 · ABP individual\\3 sesiones · pandas};
-
-% P4
-\node[dot] (d4) at (0,-14) {};
-\node[label, right=8mm of d4] (l4) {%
-  \textbf{P4} — \textit{La cola verde}};
-\node[meta, left=8mm of d4, anchor=east, text width=4cm, align=right] {
-  RA9 · ABP grupos de 3\\4 sesiones · Electricity Maps};
-
-% Etiquetas de fase encima de cada nodo
-\foreach \n/\fase/\col in {
-  d0/Concienciar/green!60!black,
-  d1/Medir/blue!50!black,
-  d2/Analizar/orange!70!black,
-  d3/Optimizar/red!50!black,
-  d4/Actuar/purple!60!black}{
-  \node[font=\scriptsize\bfseries, text=\col, above right=1mm and 8mm of \n] {\fase};
-}
-
-\end{tikzpicture}
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|}
+\hline
+\textbf{Cód.} & \textbf{Título} & \textbf{RA (RD 450/2010)} & \textbf{Metodología} & \textbf{Herramienta principal} & \textbf{Sesiones} \\
+\hline
+\textbf{P0} & \textit{¿Cuánto contamina tu código?} & Prev. a RA1 & Jigsaw + cálculo personal & Web (IEA, Electricity Maps, PNAV) & 2 \\
+\hline
+\textbf{P1} & \textit{¿Cuánto pesa tu algoritmo?} & RA3 & ABP individual & CodeCarbon · cProfile & 2 \\
+\hline
+\textbf{P2} & \textit{El servidor que no para de crecer} & RA4 & ABP grupos de 3 & \texttt{tracemalloc} · modelo CO$_2$ & 3 \\
+\hline
+\textbf{P3} & \textit{Datos que cuestan energía} & RA5 & ABP individual & CodeCarbon · tracemalloc & 3 \\
+\hline
+\textbf{P4} & \textit{La cola verde} & RA9 & ABP grupos de 3 & Electricity Maps API · heapq & 4 \\
+\hline
+\end{tabularx}
 \caption{Secuencia de prácticas Green IT para MP0485: Programación (CFGS DAM, 1.º curso)}
-\label{fig:timeline-practicas}
-\end{figure}
+\label{tab:secuencia-de-practicas-green-it-para-mp0485-progra}
+\end{table}
 
 
 
