@@ -110,66 +110,72 @@ Marco normativo & Real Decreto 450/2010, de 16 de abril \\
 \section{Resultados de aprendizaje y puntos de inserción}
 
 
-El RD 450/2010 estructura MP0485 en \textbf{nueve Resultados de Aprendizaje (RA)}:
+El RD 450/2010 estructura MP0485 en \textbf{nueve Resultados de Aprendizaje (RA)}. La tabla~\ref{tab:matriz-correspondencia} muestra cuáles de ellos acogen las prácticas Green IT propuestas y en qué trimestre se insertan:
 
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
-\begin{tabular}{|l|p{10cm}|}
-\hline
-\textbf{RA} & \textbf{Descripción} \\
-\hline
-RA1 & Reconoce la estructura de un programa informático, identificando y relacionando los elementos propios del lenguaje de programación utilizado. \\
-\hline
-RA2 & Escribe y prueba programas sencillos, reconociendo y aplicando los fundamentos de la programación orientada a objetos. \\
-\hline
-RA3 & Escribe y depura código, analizando y utilizando las estructuras de control del flujo. \\
-\hline
-RA4 & Desarrolla programas organizados en clases analizando y aplicando los principios de la programación orientada a objetos. \\
-\hline
-RA5 & Realiza operaciones de entrada y salida de información, utilizando procedimientos específicos del lenguaje y librerías de clases. \\
-\hline
-RA6 & Escribe programas que manipulan información seleccionando y utilizando tipos avanzados de datos. \\
-\hline
-RA7 & Desarrolla programas aplicando características avanzadas de los lenguajes orientados a objetos y del entorno de programación. \\
-\hline
-RA8 & Utiliza bases de datos orientadas a objetos, analizando sus características y aplicando técnicas para gestionar la persistencia de los objetos. \\
-\hline
-RA9 & Gestiona información almacenada en bases de datos relacionales manteniendo la integridad y consistencia de los datos. \\
-\hline
+\footnotesize
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}
+  l
+  p{5.2cm}
+  >{\centering\arraybackslash}p{1.35cm}
+  >{\centering\arraybackslash}p{1.35cm}
+  >{\centering\arraybackslash}p{1.35cm}
+  >{\centering\arraybackslash}p{1.35cm}
+  >{\centering\arraybackslash}p{1.35cm}
+@{}}
+\toprule
+\textbf{RA} & \textbf{Descripción} &
+  \cellcolor{practica0}\textbf{P0} &
+  \cellcolor{practica1}\textbf{P1} &
+  \cellcolor{practica2}\textbf{P2} &
+  \cellcolor{practica3}\textbf{P3} &
+  \cellcolor{practica4!80}\textbf{P4} \\
+\midrule
+RA1 & Reconoce la estructura de un programa informático &
+  \cellcolor{practica0!45}\textit{Intro GSE} & & & & \\
+RA2 & Escribe programas sencillos y aplica fundamentos POO &
+  & & & & \\
+RA3 & Escribe y depura código con estructuras de control &
+  & \cellcolor{practica1!55}\textit{Benchmark} & & & \\
+RA4 & Desarrolla programas orientados a objetos (POO) &
+  & & \cellcolor{practica2!55}\textit{Memoria} & & \\
+RA5 & Realiza operaciones de entrada/salida &
+  & & & \cellcolor{practica3!60}\textit{E/S eficiente} & \\
+RA6 & Escribe programas con tipos avanzados de datos &
+  & & & & \\
+RA7 & Aplica características avanzadas de los lenguajes OOP &
+  & & & & \\
+RA8 & Utiliza BBDD orientadas a objetos y persistencia &
+  & & & & \\
+RA9 & Gestiona estructuras dinámicas y BBDD relacionales &
+  & & & & \cellcolor{practica4!55}\textit{Carbon-Aware} \\
+\midrule
+\multicolumn{2}{@{}l}{\small\textit{Trimestre de inserción}} &
+  \small T1 & \small T1 & \small T2 & \small T2–T3 & \small T3 \\
+\bottomrule
 \end{tabular}
-\caption{Resultados de aprendizaje y puntos de inserción}
-\label{tab:resultados-de-aprendizaje-y-puntos-de-insercion}
+\caption{Matriz de correspondencia: prácticas Green IT en los RA del módulo Programación (MP0485 — DAM)}
+\label{tab:matriz-correspondencia}
 \end{table}
 
 
 \subsection{Resultados de aprendizaje seleccionados para las prácticas Green IT}
 
 
-Las cuatro prácticas de esta propuesta se insertan en los RA con mayor alineación técnica con los principios GSE:
+Las cuatro prácticas de laboratorio se insertan en los RA con mayor alineación técnica con los principios GSE:
+
+\begin{itemize}
+  \item \textbf{P0 / RA1} — Contextualización: ¿cuánto contamina tu código? Antes de escribir la primera línea, el alumnado toma conciencia de la magnitud del impacto ambiental del software.
+  \item \textbf{P1 / RA3} — Medir: el alumnado instrumenta sus propios bucles y condicionales con CodeCarbon, haciendo visible el coste energético de cada algoritmo.
+  \item \textbf{P2 / RA4} — Analizar: la instanciación de objetos se convierte en un experimento de huella de memoria (\texttt{tracemalloc}) y en una estimación de CO\textsubscript{2}.
+  \item \textbf{P3 / RA5} — Optimizar: la comparativa streaming-vs-carga completa muestra que la E/S eficiente no solo es buena práctica, sino necesidad ambiental.
+  \item \textbf{P4 / RA9} — Actuar: una cola de tareas \textit{carbon-aware} integra la Electricity Maps API para diferir procesos a las horas de menor intensidad de carbono de la red.
+\end{itemize}
 
 
-\begin{table}[H]
-\centering
-\begin{tabularx}{\textwidth}{|X|X|X|X|}
-\hline
-\textbf{Práctica} & \textbf{RA} & \textbf{Contenido Green IT} & \textbf{Principio GSE} \\
-\hline
-P1 — Benchmark energético & \textbf{RA3} (estructuras de control) & Comparación del consumo de CPU entre algoritmos equivalentes & Principio I — Eficiencia Energética \\
-\hline
-P2 — Memoria y objetos & \textbf{RA4} (POO) & Instanciación de objetos y huella de memoria & Principio III — Hardware eficiente \\
-\hline
-P3 — E/S eficiente & \textbf{RA5} (entrada/salida) & Streaming vs. carga completa de datos & Principio I — Minimización de transferencia \\
-\hline
-P4 — Carbon-Aware & \textbf{RA9} (estructuras dinámicas) & Cola de tareas con conciencia de intensidad de carbono & Principio II — Carbon-Aware Computing \\
-\hline
-\end{tabularx}
-\caption{Resultados de aprendizaje seleccionados para las prácticas Green IT}
-\label{tab:resultados-de-aprendizaje-seleccionados-para-las-p}
-\end{table}
-
-
-RA3 y RA5 se trabajan en el primer trimestre, cuando el alumnado está construyendo sus primeros hábitos de codificación; RA4 en el segundo, al profundizar en POO; y RA9 al final del curso, cuando ya domina las estructuras de datos y puede integrar APIs externas.
 
 
 
