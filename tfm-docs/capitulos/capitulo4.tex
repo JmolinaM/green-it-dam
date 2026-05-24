@@ -243,7 +243,7 @@ Ahorro por ejecución (gCO$_2$eq): \_\_\_\_\_\_ Nº de ejecuciones/día: 5 000 0
 \fichapractica{P2}{El servidor que no para de crecer}
   {RA4: POO (clases, atributos, métodos, instanciación)}
   {Se ha analizado el impacto en el consumo de memoria de las decisiones de instanciación de objetos, cuantificando con tracemalloc el coste de distintas arquitecturas de clases}
-  {ABP/PBL en equipos de 3 (roles rotativos: Portavoz / Programador/a / Auditor/a)}
+  {ABP/PBL en equipos de 3 (roles rotativos: Portavoz / Programador/a / Analista de datos)}
   {3 sesiones $\times$ 50 min}
   {P.III — Hardware eficiente · P.IV — Medición SCI}
   {Informe técnico + presentación de 5 min por equipo}
@@ -304,7 +304,7 @@ El docente circula respondiendo con preguntas: \textit{"¿Qué os dice la direct
 \textbf{(15 min) Primera exploración: ejecución y perfilado inicial}
 
 
-El equipo lee \texttt{sensor\_monitor.py} completo sin ejecutar (5 min), luego ejecuta \texttt{stress\_test.py} para n=100, 500, 1000. El Auditor/a copia los datos; el Portavoz lee las líneas con mayor \texttt{+KiB} en tracemalloc. El Programador/a puede ejecutar variaciones libres para verificar hipótesis.
+El equipo lee \texttt{sensor\_monitor.py} completo sin ejecutar (5 min), luego ejecuta \texttt{stress\_test.py} para n=100, 500, 1000. El Analista de datos copia los datos; el Portavoz lee las líneas con mayor \texttt{+KiB} en tracemalloc. El Programador/a puede ejecutar variaciones libres para verificar hipótesis.
 
 
 \textbf{Cierre (5 min):} cada equipo declara en voz alta: \textit{"Creemos que la fuga viene de \_\_\_"}. El docente las escribe en la pizarra sin comentar.
@@ -324,7 +324,7 @@ Se rotan los roles. El docente pregunta quién sitúa la causa en \texttt{Proces
 \textbf{(25 min) Diagnóstico de precisión con tracemalloc}
 
 
-Los equipos trabajan de forma autónoma. Si un equipo lleva más de 10 minutos sin avanzar, el Auditor/a puede pedir al docente \textbf{una sola pregunta socrática} de desbloqueo (\textit{"¿Qué pasa con el tamaño de \texttt{\_historial} cuando doblas \texttt{n}?"}, \textit{"¿Cuántos objetos \texttt{ConfiguracionApp} se crean para n=1000?"}).
+Los equipos trabajan de forma autónoma. Si un equipo lleva más de 10 minutos sin avanzar, el Analista de datos puede pedir al docente \textbf{una sola pregunta socrática} de desbloqueo (\textit{"¿Qué pasa con el tamaño de \texttt{\_historial} cuando doblas \texttt{n}?"}, \textit{"¿Cuántos objetos \texttt{ConfiguracionApp} se crean para n=1000?"}).
 
 
 Los equipos completan la \textbf{Ficha P2: Parte 2} (mapa de retención: clase / atributo / ¿crece? / por qué) y la causa principal con el dato que la demuestra.
@@ -360,7 +360,7 @@ Cada equipo escribe su predicción: \textit{"Con nuestra solución, el pico RAM 
 \textbf{(20 min) Implementación y medición antes/después}
 
 
-Los equipos implementan la refactorización y ejecutan \texttt{stress\_test.py} con la versión modificada. Completan la \textbf{Tabla de Resultados} (n=100, 500, 1000 MB; versión original / refactorizada / reducción \%). El Auditor/a realiza dos cálculos: (1) la estimación de CO$_2$eq operacional ahorrado por la menor RAM; (2) la \textbf{estimación de carbono incorporado evitado}: suponer que la optimización alarga la vida del servidor 2 años y, usando una huella de fabricación orientativa de 300 kgCO$_2$eq, calcular cuánto carbono incorporado se "diluye" gracias a esos 2 años adicionales ($300 \div (vida\_base + 2)$ vs.\ $300 \div vida\_base$, con $vida\_base = 5$ años).
+Los equipos implementan la refactorización y ejecutan \texttt{stress\_test.py} con la versión modificada. Completan la \textbf{Tabla de Resultados} (n=100, 500, 1000 MB; versión original / refactorizada / reducción \%). El Analista de datos realiza dos cálculos: (1) la estimación de CO$_2$eq operacional ahorrado por la menor RAM; (2) la \textbf{estimación de carbono incorporado evitado}: suponer que la optimización alarga la vida del servidor 2 años y, usando una huella de fabricación orientativa de 300 kgCO$_2$eq, calcular cuánto carbono incorporado se "diluye" gracias a esos 2 años adicionales ($300 \div (vida\_base + 2)$ vs.\ $300 \div vida\_base$, con $vida\_base = 5$ años).
 
 
 \textbf{(20 min) Ronda de presentaciones: "El tribunal técnico"}
