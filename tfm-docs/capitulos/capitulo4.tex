@@ -360,7 +360,7 @@ Cada equipo escribe su predicción: \textit{"Con nuestra solución, el pico RAM 
 \textbf{(20 min) Implementación y medición antes/después}
 
 
-Los equipos implementan la refactorización y ejecutan \texttt{stress\_test.py} con la versión modificada. Completan la \textbf{Tabla de Resultados} (n=100, 500, 1000 MB; versión original / refactorizada / reducción \%). El Auditor/a calcula la estimación de CO$_2$eq y la extrapolación a producción.
+Los equipos implementan la refactorización y ejecutan \texttt{stress\_test.py} con la versión modificada. Completan la \textbf{Tabla de Resultados} (n=100, 500, 1000 MB; versión original / refactorizada / reducción \%). El Auditor/a realiza dos cálculos: (1) la estimación de CO$_2$eq operacional ahorrado por la menor RAM; (2) la \textbf{estimación de carbono incorporado evitado}: suponer que la optimización alarga la vida del servidor 2 años y, usando una huella de fabricación orientativa de 300 kgCO$_2$eq, calcular cuánto carbono incorporado se "diluye" gracias a esos 2 años adicionales ($300 \div (vida\_base + 2)$ vs.\ $300 \div vida\_base$, con $vida\_base = 5$ años).
 
 
 \textbf{(20 min) Ronda de presentaciones: "El tribunal técnico"}
@@ -388,7 +388,8 @@ Informe técnico por equipo (PDF o documento en plataforma):
 \item Código original con las líneas causantes marcadas y explicadas en prosa
 \item Código refactorizado con justificación de la decisión
 \item Tabla de resultados antes/después (n=100, 500, 1000)
-\item Estimación CO$_2$eq antes/después + extrapolación a 8 h de producción (cálculo explícito)
+\item Estimación CO$_2$eq operacional antes/después + extrapolación a 8 h de producción (cálculo explícito)
+\item \textbf{Cálculo de carbono incorporado evitado}: asumir que la optimización alarga la vida del servidor 2 años (de 5 a 7 años); con una huella de fabricación orientativa de 300 kgCO$_2$eq, calcular la reducción de emisiones incorporadas por año y el total ahorrado en esos 2 años adicionales
 \item Trade-offs: qué pierde la solución y en qué escenario sería problemático
 \item Reflexión del equipo (5–8 líneas): \textit{"¿Qué implicación tiene esto para el diseño de clases en un proyecto real de DAM?"}
 \end{enumerate}
