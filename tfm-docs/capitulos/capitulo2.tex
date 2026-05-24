@@ -198,44 +198,50 @@ El marco conceptual de la GSE se articula en torno a la fórmula fundamental de 
 \textbf{Emisión de Carbono (C) = Energía Consumida (E) $\times$ Intensidad de Carbono (CI)}
 
 
-Un software sostenible debe impactar positivamente en ambos factores (E y CI), además de considerar las emisiones asociadas al hardware que lo soporta. La figura~\ref{fig:cadena-co2} muestra la cadena causal y los puntos de intervención de la GSE:
+Un software sostenible debe impactar positivamente en ambos factores (E y CI), además de considerar las emisiones asociadas al hardware que lo soporta. La figura~\ref{fig:gse-principios} ilustra cómo los tres principios principales de la GSE reducen la huella de carbono y cómo se aplican en las prácticas de este TFM:
 
 \begin{figure}[htbp]
 \centering
 \begin{tikzpicture}[
-  node distance=1.6cm and 2.0cm,
-  box/.style={rectangle, rounded corners=5pt, draw=green!50!black,
-              fill=green!8, text width=2.0cm, align=center,
-              font=\small\bfseries, minimum height=1.1cm},
-  gbox/.style={rectangle, rounded corners=3pt, draw=gray!50,
-               fill=gray!7, text width=2.2cm, align=center,
-               font=\footnotesize\itshape, minimum height=0.9cm},
-  arr/.style={-{Stealth}, thick, green!50!black},
-  darr/.style={-{Stealth}, dashed, gray!60}
+  col1/.style={rectangle, rounded corners=4pt, minimum width=3.2cm, minimum height=1.0cm,
+               draw=green!60!black, fill=green!15, align=center, font=\small\bfseries},
+  col2/.style={rectangle, rounded corners=4pt, minimum width=5.6cm, minimum height=1.0cm,
+               draw=gray!40, fill=gray!6, align=center, font=\small},
+  col3/.style={rectangle, rounded corners=4pt, minimum width=2.4cm, minimum height=1.0cm,
+               draw=practica1!80!black, fill=practica1!30, align=center, font=\small\bfseries},
+  hdr/.style={font=\small\bfseries\itshape, text=gray!60}
 ]
-  % Main chain
-  \node[box] (code)   {Código\\ejecutado};
-  \node[box, right=of code]   (cpu)    {CPU · Mem.\\E/S · Red};
-  \node[box, right=of cpu]    (energy) {Energía\\consumida (E)};
-  \node[box, right=of energy] (co2)    {CO\textsubscript{2}\\emitido};
+  % Headers
+  \node[hdr] (h1) at (0,0)     {Principio GSE};
+  \node[hdr] (h2) at (4.5,0)   {Qué reduce};
+  \node[hdr] (h3) at (9.3,0)   {Práctica};
 
-  \draw[arr] (code)   -- (cpu);
-  \draw[arr] (cpu)    -- (energy);
-  \draw[arr] (energy) -- (co2) node[midway, above, font=\footnotesize, black] {$\times$ CI};
+  % Row 1 — P.I Eficiencia
+  \node[col1] (r1a) at (0,-1.3)   {P.\,I\\[-2pt]\footnotesize Eficiencia energética};
+  \node[col2] (r1b) at (4.5,-1.3) {CPU · memoria · red:\\[-2pt]\footnotesize menos energía para el mismo resultado};
+  \node[col3] (r1c) at (9.3,-1.3) {P1 · P3};
 
-  % GSE principles below
-  \node[gbox, below=1.0cm of code]   (p1a) {P.\,I\\Algoritmos eficientes};
-  \node[gbox, below=1.0cm of cpu]    (p1b) {P.\,I\\Memoria · E/S};
-  \node[gbox, below=1.0cm of energy] (p2)  {P.\,II\\Carbon-Aware};
-  \node[gbox, below=1.0cm of co2]    (p3)  {P.\,III\\Hardware eficiente};
+  % Row 2 — P.II Carbon-Aware
+  \node[col1, fill=practica4!20, draw=practica4!70!black]
+        (r2a) at (0,-2.8)   {P.\,II\\[-2pt]\footnotesize Carbon-Aware};
+  \node[col2] (r2b) at (4.5,-2.8) {Intensidad de carbono (CI):\\[-2pt]\footnotesize ejecutar cuando la red eléctrica es más verde};
+  \node[col3, fill=practica4!30, draw=practica4!80!black]
+        (r2c) at (9.3,-2.8) {P4};
 
-  \draw[darr] (p1a.north) -- (code.south);
-  \draw[darr] (p1b.north) -- (cpu.south);
-  \draw[darr] (p2.north)  -- (energy.south);
-  \draw[darr] (p3.north)  -- (co2.south);
+  % Row 3 — P.III Hardware
+  \node[col1, fill=practica3!30, draw=practica3!70!black]
+        (r3a) at (0,-4.3)   {P.\,III\\[-2pt]\footnotesize Hardware eficiente};
+  \node[col2] (r3b) at (4.5,-4.3) {Carbono incorporado:\\[-2pt]\footnotesize menos RAM/CPU prolonga la vida del equipo};
+  \node[col3, fill=practica3!40, draw=practica3!80!black]
+        (r3c) at (9.3,-4.3) {P2};
+
+  % Separator lines
+  \draw[gray!25, line width=0.4pt] (-1.8,-0.55) -- (10.8,-0.55);
+  \draw[gray!20, line width=0.3pt] (-1.8,-2.05) -- (10.8,-2.05);
+  \draw[gray!20, line width=0.3pt] (-1.8,-3.55) -- (10.8,-3.55);
 \end{tikzpicture}
-\caption{Cadena causal código\,→\,CO\textsubscript{2} y puntos de intervención de los principios GSE}
-\label{fig:cadena-co2}
+\caption{Principios de la Green Software Engineering y su aplicación en las prácticas de este TFM}
+\label{fig:gse-principios}
 \end{figure}
 
 La GSE aplica cuatro principios rectores para reducir sistémicamente la huella de carbono:
