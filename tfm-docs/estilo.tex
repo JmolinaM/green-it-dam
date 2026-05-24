@@ -24,6 +24,36 @@
 \usepackage{longtable}
 \usepackage{multirow}
 \usepackage{placeins}
+\usepackage{fontawesome5}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+% Ficha técnica de práctica Green IT
+\newcommand{\fichapractica}[8]{%
+  % #1 código (P0), #2 título, #3 RA, #4 CE, #5 metodología, #6 duración, #7 herramientas, #8 entregable
+  \begin{tcolorbox}[
+    enhanced,
+    breakable,
+    colback=green!4!white,
+    colframe=green!45!black,
+    colbacktitle=green!45!black,
+    coltitle=white,
+    fonttitle=\bfseries\large,
+    title={\faLeaf\quad #1 — \textit{#2}},
+    left=6pt, right=6pt, top=4pt, bottom=4pt,
+    boxrule=0.8pt,
+    arc=4pt
+  ]
+  \begin{tabular}{@{}p{3.2cm}p{10.5cm}@{}}
+    \textbf{RA asociado}   & #3 \\[4pt]
+    \textbf{CE integrado}  & #4 \\[4pt]
+    \textbf{Metodología}   & #5 \\[4pt]
+    \textbf{Duración}      & #6 \\[4pt]
+    \textbf{Herramientas}  & #7 \\[4pt]
+    \textbf{Entregable}    & #8 \\
+  \end{tabular}
+  \end{tcolorbox}
+}
 
 % Para que no parta las palabras
 \pretolerance=10000
