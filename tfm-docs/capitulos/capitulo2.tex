@@ -202,73 +202,93 @@ Un software sostenible debe impactar positivamente en ambos factores (E y CI), a
 
 \begin{figure}[htbp]
 \centering
-\begin{tikzpicture}[
-  card/.style={rectangle, rounded corners=8pt, minimum width=3.8cm,
-               minimum height=5.8cm, draw=green!55!black, fill=green!8,
-               text width=3.4cm, align=center},
-  ctitle/.style={font=\small\bfseries, align=center},
-  cdesc/.style={font=\footnotesize, align=center, text width=3.0cm},
-  bar/.style={rectangle, draw=none},
-  slot/.style={rectangle, rounded corners=2pt, minimum width=0.44cm,
-               minimum height=0.7cm, draw=none},
-  device/.style={rectangle, rounded corners=3pt, draw=gray!60,
-                 fill=gray!15, minimum width=1.0cm, minimum height=0.7cm}
+\begin{tcbraster}[
+  raster columns=2,
+  raster equal height,
+  raster column skip=0.4cm,
+  raster row skip=0.4cm,
+  raster width=\textwidth,
+  enhanced,
+  fonttitle=\small\bfseries,
+  coltitle=white,
+  colbacktitle=green!45!black,
+  colback=green!5,
+  colframe=green!45!black,
+  boxrule=0.7pt,
+  top=6pt, bottom=6pt, left=8pt, right=8pt
 ]
-
-%% ---- CARD 1: Eficiencia energética ----
-\node[card, fill=green!8, draw=green!55!black] (c1) at (0,0) {};
-% Bar chart: antes (red/tall) vs después (green/short)
-\node[bar, fill=red!40,        minimum width=0.55cm, minimum height=1.6cm] at (-0.5, 1.6) {};
-\node[bar, fill=green!55!black, minimum width=0.55cm, minimum height=0.7cm] at ( 0.5, 1.15) {};
-\node[font=\tiny, text=gray!60] at (-0.5, 0.65) {antes};
-\node[font=\tiny, text=gray!60] at ( 0.5, 0.65) {despu\'{e}s};
-\draw[->, thick, green!55!black] (-0.1, 1.3) -- (0.2, 0.9);
-\node[ctitle] at (0, 0.1) {Principio I\\Eficiencia energ\'{e}tica};
-\draw[gray!30] (-1.7,-0.25) -- (1.7,-0.25);
-\node[cdesc] at (0,-1.2)
-  {El mismo resultado con menos energ\'{i}a:\\
-   optimizar algoritmos, memoria\\
-   y transferencia de datos.\\[4pt]
-   \textit{Reducir \textbf{E} en:}\\
-   CO\textsubscript{2} $=$ \textbf{E} $\times$ CI};
-
-%% ---- CARD 2: Carbon-Aware ----
-\node[card, fill=practica4!12, draw=practica4!70!black] (c2) at (4.4,0) {};
-% Time slots: grey grey GREEN GREEN grey
-\node[slot, fill=gray!25]   at (3.74, 1.5) {};
-\node[slot, fill=gray!25]   at (4.18, 1.5) {};
-\node[slot, fill=green!45]  at (4.62, 1.5) {};
-\node[slot, fill=green!45]  at (5.06, 1.5) {};
-\node[slot, fill=gray!25]   at (5.50, 1.5) {};
-\node[font=\tiny, text=gray!60] at (4.4, 0.85) {hora del d\'{i}a $\rightarrow$};
-\node[font=\tiny, text=practica4!80!black] at (4.62, 1.1) {\textbf{ahora}};
-\node[ctitle] at (4.4, 0.1) {Principio II\\Carbon-Aware};
-\draw[gray!30] (2.8,-0.25) -- (6.0,-0.25);
-\node[cdesc] at (4.4,-1.2)
-  {La misma energ\'{i}a emite distinto CO\textsubscript{2} seg\'{u}n cu\'{a}ndo.\\[4pt]
-   Ejecutar tareas cuando la red\\
-   el\'{e}ctrica usa m\'{a}s renovables.\\[4pt]
-   \textit{Reducir \textbf{CI} en:}\\
-   CO\textsubscript{2} $=$ E $\times$ \textbf{CI}};
-
-%% ---- CARD 3: Hardware eficiente ----
-\node[card, fill=practica3!15, draw=practica3!70!black] (c3) at (8.8,0) {};
-% Device box with U-arrow below (= extended life)
-\node[device] (dev) at (8.8, 1.7) {\scriptsize equipo};
-\draw[->, thick, practica3!60!black, rounded corners=3pt]
-  (8.1, 1.3) -- (8.1, 1.0) -- (9.5, 1.0) -- (9.5, 1.3);
-\node[font=\tiny, text=gray!60] at (8.8, 0.7) {vida \'{u}til extendida};
-\node[ctitle] at (8.8, 0.1) {Principio III\\Hardware eficiente};
-\draw[gray!30] (7.2,-0.25) -- (10.4,-0.25);
-\node[cdesc] at (8.8,-1.2)
-  {Fabricar hardware emite m\'{a}s CO\textsubscript{2} que usarlo.\\[4pt]
-   Software ligero (menos RAM/CPU)\\
-   prolonga la vida del equipo\\
-   y reduce el carbono incorporado.\\[4pt]
-   \textit{Reducir \textbf{M} en SCI $=$ (O$+$M)/R}};
-
-\end{tikzpicture}
-\caption{Los tres principios de la Green Software Engineering}
+\begin{tcolorbox}[title={Principio I -- Eficiencia energ\'etica}]
+  \small
+  El mismo trabajo computacional consumiendo \textbf{menos energ\'ia}.
+  Se optimizan los \textbf{algoritmos}, el uso de \textbf{memoria}
+  y la \textbf{transferencia de datos} por red.
+  \vspace{6pt}\par
+  \centering
+  \colorbox{red!30}{\rule{0pt}{18pt}\hspace{16pt}}%
+  \quad$\rightarrow$\quad
+  \colorbox{green!40}{\rule{0pt}{9pt}\hspace{16pt}}\\[2pt]
+  \tiny antes \hspace{32pt} despu\'es
+  \par\vspace{4pt}\raggedright
+  \footnotesize\textit{Act\'ua sobre \textbf{E}: CO\textsubscript{2} $=$ \textbf{E} $\times$ CI}
+\end{tcolorbox}
+\begin{tcolorbox}[
+  title={Principio II -- Carbon-Aware Computing},
+  colbacktitle=practica4!80!black,
+  colframe=practica4!70!black,
+  colback=practica4!5
+]
+  \small
+  La misma energ\'ia emite distinto CO\textsubscript{2} seg\'un
+  \textbf{cu\'ando y d\'onde} se consume.
+  Se difieren tareas al momento con m\'as \textbf{energ\'ia renovable} en la red.
+  \vspace{6pt}\par
+  \centering
+  \colorbox{gray!25}{\rule{0pt}{12pt}\hspace{10pt}}%
+  \colorbox{gray!25}{\rule{0pt}{12pt}\hspace{10pt}}%
+  \colorbox{green!45}{\rule{0pt}{12pt}\hspace{10pt}}%
+  \colorbox{green!45}{\rule{0pt}{12pt}\hspace{10pt}}%
+  \colorbox{gray!25}{\rule{0pt}{12pt}\hspace{10pt}}\\[2pt]
+  \tiny horas del d\'ia $\longrightarrow$ (verde = red m\'as limpia)
+  \par\vspace{4pt}\raggedright
+  \footnotesize\textit{Act\'ua sobre \textbf{CI}: CO\textsubscript{2} $=$ E $\times$ \textbf{CI}}
+\end{tcolorbox}
+\begin{tcolorbox}[
+  title={Principio III -- Hardware eficiente},
+  colbacktitle=practica3!70!black,
+  colframe=practica3!60!black,
+  colback=practica3!5
+]
+  \small
+  Fabricar un dispositivo emite \textbf{m\'as CO\textsubscript{2}} que usarlo.
+  Software ligero (menos RAM/CPU) \textbf{prolonga la vida \'util}
+  del hardware y amortiza su huella de fabricaci\'on.
+  \vspace{6pt}\par
+  \centering
+  \fbox{\small equipo}
+  $\xrightarrow{\text{\scriptsize m\'as a\~nos de uso}}$
+  \fbox{\small equipo}\fbox{\small equipo}
+  \par\vspace{4pt}\raggedright
+  \footnotesize\textit{Act\'ua sobre \textbf{M} en: SCI $=$ (O $+$ \textbf{M}) / R}
+\end{tcolorbox}
+\begin{tcolorbox}[
+  title={Principio IV -- Medici\'on y transparencia},
+  colbacktitle=gray!55,
+  colframe=gray!50,
+  colback=gray!4
+]
+  \small
+  Lo que no se mide no se puede mejorar.
+  El est\'andar \textbf{SCI} (\textit{Software Carbon Intensity})
+  de la Green Software Foundation cuantifica el impacto
+  en gramos de CO\textsubscript{2} por unidad funcional.
+  \vspace{6pt}\par
+  \centering
+  \large\textbf{SCI $=$ (O $+$ M) / R}
+  \par\vspace{4pt}\raggedright
+  \footnotesize\textit{Herramientas: CodeCarbon, JoularJX, Electricity Maps API}
+\end{tcolorbox}
+\end{tcbraster}
+\caption{Los cuatro principios de la Green Software Engineering (GSE)}
 \label{fig:gse-principios}
 \end{figure}
 
